@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://mintly.app/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1
