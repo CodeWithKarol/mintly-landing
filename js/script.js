@@ -14,6 +14,9 @@ function showTestimonial(index) {
 	);
 	const dots = document.querySelectorAll(".dot");
 
+	// Return early if no slides exist
+	if (slides.length === 0) return;
+
 	// Validate index
 	if (index >= slides.length) {
 		currentTestimonial = 0;
@@ -32,12 +35,16 @@ function showTestimonial(index) {
 	);
 
 	// Show current slide
-	slides[currentTestimonial].classList.add(
-		"active"
-	);
-	dots[currentTestimonial].classList.add(
-		"active"
-	);
+	if (slides[currentTestimonial]) {
+		slides[currentTestimonial].classList.add(
+			"active"
+		);
+	}
+	if (dots[currentTestimonial]) {
+		dots[currentTestimonial].classList.add(
+			"active"
+		);
+	}
 }
 
 function nextTestimonial() {
@@ -83,7 +90,7 @@ function sendQuickReply(message) {
 	const userMessage =
 		document.createElement("div");
 	userMessage.style.cssText =
-		"background: #14B8A6; color: white; padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; text-align: right; font-size: 13px; max-width: 80%;";
+		"background: #14B8A6; color: white; padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; margin-left: auto; margin-right: 20px; text-align: right; font-size: 13px; max-width: 80%;";
 	userMessage.textContent = message;
 	chatBody.appendChild(userMessage);
 
@@ -92,7 +99,7 @@ function sendQuickReply(message) {
 		const botMessage =
 			document.createElement("div");
 		botMessage.style.cssText =
-			"background: #F0F0F0; color: #374151; padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; text-align: left; font-size: 13px; max-width: 80%;";
+			"background: #F0F0F0; color: #374151; padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; margin-left: 20px; text-align: left; font-size: 13px; max-width: 80%;";
 
 		const responses = {
 			"I have a question":
@@ -183,12 +190,12 @@ function handleSignup(event) {
 }
 
 // ========================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS - Professional Timing
 // ========================================
 
 const observerOptions = {
 	threshold: 0.1,
-	rootMargin: "0px 0px -50px 0px",
+	rootMargin: "0px 0px -60px 0px",
 };
 
 const observer = new IntersectionObserver(
@@ -207,7 +214,7 @@ const observer = new IntersectionObserver(
 // Observe elements for scroll animations
 document
 	.querySelectorAll(
-		".how-it-works, .benefit-card, .step, .testimonial, .cert-badge"
+		".how-it-works, .benefit-card, .step-item, .testimonial-card, .usp-highlight-card, .usp-features-column, .feature-item"
 	)
 	.forEach((el) => {
 		observer.observe(el);

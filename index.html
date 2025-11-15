@@ -52,211 +52,530 @@
 	<body>
 		<!-- Hero Section -->
 		<section class="hero">
-			<div class="hero-content">
-				<div class="hero-text">
-					<h1 class="headline">
-						Automate Your Money.<br />Grow Your
-						Future.
-					</h1>
-					<p class="hero-subtitle">
-						Set it up once, watch your money grow
-						effortlessly. Budget smarter, save
-						automatically, invest wisely—all in
-						one app.
-					</p>
-					<button
-						class="cta-button"
-						onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })"
-					>
-						Get Started Free
-					</button>
-					<p class="hero-subtext">
-						No credit card required. Free forever
-						tier available.
-					</p>
-				</div>
-				<div class="hero-visual">
-					<svg
-						class="ai-mascot"
-						viewBox="0 0 200 240"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<!-- AI Mascot with animated elements -->
-						<defs>
-							<linearGradient
-								id="mascotGradient"
-								x1="0%"
-								y1="0%"
-								x2="100%"
-								y2="100%"
-							>
-								<stop
-									offset="0%"
-									style="
-										stop-color: #14b8a6;
-										stop-opacity: 1;
-									"
-								/>
-								<stop
-									offset="100%"
-									style="
-										stop-color: #0d9488;
-										stop-opacity: 1;
-									"
-								/>
-							</linearGradient>
-						</defs>
-						<!-- Head -->
-						<circle
-							cx="100"
-							cy="80"
-							r="45"
-							fill="url(#mascotGradient)"
-						/>
-						<!-- Eyes -->
-						<circle
-							cx="85"
-							cy="70"
-							r="6"
-							fill="white"
-						/>
-						<circle
-							cx="115"
-							cy="70"
-							r="6"
-							fill="white"
-						/>
-						<circle
-							cx="83"
-							cy="68"
-							r="3"
-							fill="#0D9488"
-						/>
-						<circle
-							cx="113"
-							cy="68"
-							r="3"
-							fill="#0D9488"
-						/>
-						<!-- Smile -->
-						<path
-							d="M 85 85 Q 100 95 115 85"
-							stroke="white"
-							stroke-width="3"
-							fill="none"
-							stroke-linecap="round"
-						/>
-						<!-- Body with graph lines -->
-						<rect
-							x="70"
-							y="130"
-							width="60"
-							height="70"
-							fill="#0D9488"
-							opacity="0.2"
-							rx="8"
-						/>
-						<!-- Animated growth lines -->
-						<polyline
-							points="80,180 90,160 100,175 110,150 120,165"
-							stroke="#14B8A6"
-							stroke-width="2"
-							fill="none"
-							stroke-linecap="round"
-							class="growth-line"
-						/>
-						<!-- Hands -->
-						<circle
-							cx="55"
-							cy="150"
-							r="8"
-							fill="url(#mascotGradient)"
-						/>
-						<circle
-							cx="145"
-							cy="150"
-							r="8"
-							fill="url(#mascotGradient)"
-						/>
-					</svg>
-				</div>
+			<!-- Animated background elements -->
+			<div class="hero-background">
+				<div
+					class="gradient-orb gradient-orb-1"
+				></div>
+				<div
+					class="gradient-orb gradient-orb-2"
+				></div>
+				<div class="grid-pattern"></div>
 			</div>
-			<div class="floating-elements">
-				<div class="float-icon icon-save">💰</div>
-				<div class="float-icon icon-invest">
-					📈
-				</div>
-				<div class="float-icon icon-budget">
-					📊
+
+			<div class="hero-container">
+				<div class="hero-content">
+					<!-- Left side: Text content -->
+					<div class="hero-text-section">
+						<div class="hero-badge">
+							<span class="badge-icon">⚡</span>
+							<span
+								>AI-Powered Financial
+								Automation</span
+							>
+						</div>
+
+						<h1 class="hero-title">
+							Your Money<br /><span
+								class="highlight"
+								>Works While You Sleep</span
+							>
+						</h1>
+
+						<p class="hero-description">
+							Automate your savings, optimize your
+							investments, and master your budget
+							with AI that learns your lifestyle.
+							Set it once, watch it grow.
+						</p>
+
+						<!-- CTA Buttons -->
+						<div class="hero-ctas">
+							<button
+								class="btn btn-primary"
+								onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })"
+							>
+								<span>Get Started Free</span>
+								<svg
+									class="btn-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path
+										d="M5 12h14M12 5l7 7-7 7"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</button>
+							<button class="btn btn-secondary">
+								<svg
+									class="btn-icon"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<path d="M8 5v14l11-7z" />
+								</svg>
+								<span>Watch Demo</span>
+							</button>
+						</div>
+
+						<!-- Trust indicators -->
+						<div class="trust-indicators">
+							<div class="trust-item">
+								<span class="trust-icon">✓</span>
+								<span
+									>No credit card required</span
+								>
+							</div>
+							<div class="trust-item">
+								<span class="trust-icon">✓</span>
+								<span>Bank-level security</span>
+							</div>
+							<div class="trust-item">
+								<span class="trust-icon">✓</span>
+								<span>Free forever plan</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right side: Visual showcase -->
+					<div class="hero-visual-section">
+						<div class="dashboard-mockup">
+							<div class="mockup-header">
+								<div class="mockup-dot"></div>
+								<div class="mockup-dot"></div>
+								<div class="mockup-dot"></div>
+							</div>
+							<div class="mockup-content">
+								<div
+									class="stat-card stat-card-1"
+								>
+									<div class="stat-label">
+										Monthly Savings
+									</div>
+									<div class="stat-value">
+										$2,847
+									</div>
+									<div class="stat-change">
+										↑ 23% vs last month
+									</div>
+								</div>
+								<div
+									class="stat-card stat-card-2"
+								>
+									<div class="stat-label">
+										Investment Growth
+									</div>
+									<div class="stat-value">
+										+$1,256
+									</div>
+									<div class="stat-change">
+										YTD performance
+									</div>
+								</div>
+								<div
+									class="stat-card stat-card-3"
+								>
+									<div class="stat-label">
+										Budget Status
+									</div>
+									<div class="stat-progress">
+										<div class="progress-bar">
+											<div
+												class="progress-fill"
+											></div>
+										</div>
+									</div>
+									<div class="stat-change">
+										On track
+									</div>
+								</div>
+								<div class="chart-placeholder">
+									<svg
+										viewBox="0 0 100 60"
+										preserveAspectRatio="none"
+									>
+										<polyline
+											points="0,45 15,35 30,40 45,20 60,30 75,15 100,5"
+											fill="none"
+											stroke="#14b8a6"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<polyline
+											points="0,50 15,40 30,45 45,25 60,35 75,20 100,10"
+											fill="none"
+											stroke="#0d9488"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											opacity="0.5"
+										/>
+									</svg>
+								</div>
+							</div>
+						</div>
+
+						<!-- Floating feature cards -->
+						<div
+							class="floating-card floating-card-1"
+						>
+							<div class="card-icon">🎯</div>
+							<div class="card-text">
+								<div class="card-label">
+									Smart Goals
+								</div>
+								<div class="card-value">
+									Track & Achieve
+								</div>
+							</div>
+						</div>
+						<div
+							class="floating-card floating-card-2"
+						>
+							<div class="card-icon">🤖</div>
+							<div class="card-text">
+								<div class="card-label">
+									AI Insights
+								</div>
+								<div class="card-value">
+									Personalized Tips
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Key Benefits Section -->
 		<section class="benefits">
+			<div class="benefits-background">
+				<div
+					class="benefits-gradient-orb benefits-orb-1"
+				></div>
+				<div
+					class="benefits-gradient-orb benefits-orb-2"
+				></div>
+			</div>
+
 			<div class="container">
-				<h2>Why Choose Mintly?</h2>
+				<div class="benefits-header">
+					<h2 class="benefits-title">
+						Why Choose Mintly?
+					</h2>
+					<p class="benefits-subtitle">
+						Experience the features that make
+						financial management effortless
+					</p>
+				</div>
+
 				<div class="benefits-grid">
+					<!-- Benefit 1 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">🤖</div>
-						<h3>AI-Powered Automation</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-1"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path
+										d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+									/>
+								</svg>
+							</div>
+							<div class="benefit-number">01</div>
+						</div>
+						<h3 class="benefit-title-card">
+							AI-Powered Automation
+						</h3>
+						<p class="benefit-description">
 							Let artificial intelligence handle
 							your financial decisions. Set
 							preferences once, and watch as AI
 							optimizes your money for maximum
 							growth.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
+
+					<!-- Benefit 2 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">⚡</div>
-						<h3>Easy Setup</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-2"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path
+										d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+									/>
+									<polyline
+										points="13 2 13 9 20 9"
+									/>
+									<line
+										x1="9"
+										y1="13"
+										x2="15"
+										y2="13"
+									/>
+									<line
+										x1="9"
+										y1="17"
+										x2="15"
+										y2="17"
+									/>
+								</svg>
+							</div>
+							<div class="benefit-number">02</div>
+						</div>
+						<h3 class="benefit-title-card">
+							Easy Setup
+						</h3>
+						<p class="benefit-description">
 							Connect your bank, set your goals,
 							and let Mintly work. No complex
 							forms or confusing processes—just
 							intuitive simplicity.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
+
+					<!-- Benefit 3 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">💳</div>
-						<h3>Automatic Savings</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-3"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<rect
+										x="1"
+										y="4"
+										width="22"
+										height="16"
+										rx="2"
+										ry="2"
+									/>
+									<path d="M1 10h22" />
+									<path d="M6 14h.01" />
+									<path d="M10 14h.01" />
+									<path d="M14 14h.01" />
+									<path d="M18 14h.01" />
+								</svg>
+							</div>
+							<div class="benefit-number">03</div>
+						</div>
+						<h3 class="benefit-title-card">
+							Automatic Savings
+						</h3>
+						<p class="benefit-description">
 							Round-ups, recurring transfers, and
 							smart allocations happen
 							automatically. Save more without
 							thinking about it.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
+
+					<!-- Benefit 4 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">🎯</div>
-						<h3>Goal Tracking</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-4"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path d="M9 11l3 3L22 4" />
+									<path
+										d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+							</div>
+							<div class="benefit-number">04</div>
+						</div>
+						<h3 class="benefit-title-card">
+							Goal Tracking
+						</h3>
+						<p class="benefit-description">
 							Set financial goals and watch
 							real-time progress. From vacation
 							funds to emergency savings—we keep
 							you focused on what matters.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
+
+					<!-- Benefit 5 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">🔐</div>
-						<h3>Bank-Level Security</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-5"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path
+										d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+									/>
+									<path d="M9 12l2 2 4-4" />
+								</svg>
+							</div>
+							<div class="benefit-number">05</div>
+						</div>
+						<h3 class="benefit-title-card">
+							Bank-Level Security
+						</h3>
+						<p class="benefit-description">
 							Your financial data is encrypted and
 							protected. We use industry-standard
 							security protocols trusted by
 							leading financial institutions.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
+
+					<!-- Benefit 6 -->
 					<div class="benefit-card">
-						<div class="benefit-icon">📱</div>
-						<h3>Works Everywhere</h3>
-						<p>
+						<div class="benefit-card-header">
+							<div
+								class="benefit-icon-wrapper benefit-icon-6"
+							>
+								<svg
+									class="benefit-svg-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path
+										d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+									/>
+									<circle
+										cx="9"
+										cy="7"
+										r="4"
+									/>
+									<path
+										d="M23 21v-2a4 4 0 0 0-3-3.87"
+									/>
+									<path
+										d="M16 3.13a4 4 0 0 1 0 7.75"
+									/>
+								</svg>
+							</div>
+							<div class="benefit-number">06</div>
+						</div>
+						<h3 class="benefit-title-card">
+							Works Everywhere
+						</h3>
+						<p class="benefit-description">
 							Access your account on mobile, web,
 							or tablet. Your finances are always
 							in your pocket, synchronized across
 							all devices.
 						</p>
+						<div class="benefit-arrow">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -264,174 +583,272 @@
 
 		<!-- How It Works Section -->
 		<section class="how-it-works">
+			<div class="how-it-works-background">
+				<div
+					class="how-it-works-gradient-orb how-it-works-orb-1"
+				></div>
+				<div
+					class="how-it-works-gradient-orb how-it-works-orb-2"
+				></div>
+			</div>
+
 			<div class="container">
-				<h2>How It Works</h2>
+				<div class="how-it-works-header">
+					<h2 class="how-it-works-title">
+						How It Works
+					</h2>
+					<p class="how-it-works-subtitle">
+						Get started in 4 simple steps and let
+						AI take care of your money
+					</p>
+				</div>
+
 				<div class="steps-container">
-					<div class="step">
-						<div class="step-number">1</div>
-						<h3>Connect Your Accounts</h3>
-						<p>
-							Securely link your bank accounts and
-							investments. Mint supports all major
-							financial institutions.
-						</p>
-						<div class="step-visual">
-							<svg
-								viewBox="0 0 100 100"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect
-									x="20"
-									y="20"
-									width="60"
-									height="60"
-									fill="none"
-									stroke="#14B8A6"
-									stroke-width="2"
-									rx="4"
-								/>
-								<circle
-									cx="50"
-									cy="50"
-									r="15"
-									fill="#14B8A6"
-								/>
-								<text
-									x="50"
-									y="55"
-									text-anchor="middle"
-									fill="white"
-									font-size="24"
+					<!-- Step 1 -->
+					<div class="step-item">
+						<div class="step-card">
+							<div class="step-header">
+								<div
+									class="step-icon-wrapper step-icon-1"
 								>
-									🔗
-								</text>
+									<svg
+										class="step-icon"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+									>
+										<path
+											d="M12 1v22M1 12h22"
+											stroke-width="1.5"
+											stroke-linecap="round"
+										/>
+										<path
+											d="M7.5 7.5L12 12l4.5-4.5M12 12l4.5 4.5M12 12l-4.5 4.5"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<circle
+											cx="12"
+											cy="12"
+											r="1.5"
+											fill="currentColor"
+										/>
+									</svg>
+								</div>
+								<div class="step-number">01</div>
+							</div>
+							<h3 class="step-title">
+								Connect Accounts
+							</h3>
+							<p class="step-description">
+								Securely link your bank accounts
+								and investments in just a few
+								clicks. We support all major
+								financial institutions.
+							</p>
+						</div>
+						<div class="step-connector">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
 							</svg>
 						</div>
 					</div>
-					<div class="step-arrow">→</div>
-					<div class="step">
-						<div class="step-number">2</div>
-						<h3>Set Your Preferences</h3>
-						<p>
-							Tell us your goals, risk tolerance,
-							and lifestyle. Our AI learns what
-							matters to you.
-						</p>
-						<div class="step-visual">
-							<svg
-								viewBox="0 0 100 100"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect
-									x="20"
-									y="20"
-									width="60"
-									height="60"
-									fill="none"
-									stroke="#14B8A6"
-									stroke-width="2"
-									rx="4"
-								/>
-								<circle
-									cx="50"
-									cy="50"
-									r="15"
-									fill="#14B8A6"
-								/>
-								<text
-									x="50"
-									y="55"
-									text-anchor="middle"
-									fill="white"
-									font-size="24"
+
+					<!-- Step 2 -->
+					<div class="step-item">
+						<div class="step-card">
+							<div class="step-header">
+								<div
+									class="step-icon-wrapper step-icon-2"
 								>
-									⚙️
-								</text>
+									<svg
+										class="step-icon"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+									>
+										<circle
+											cx="12"
+											cy="12"
+											r="9"
+										/>
+										<path
+											d="M12 6v6l4 2"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+								<div class="step-number">02</div>
+							</div>
+							<h3 class="step-title">
+								Set Preferences
+							</h3>
+							<p class="step-description">
+								Tell us your financial goals, risk
+								tolerance, and lifestyle
+								preferences. Our AI learns what
+								matters to you.
+							</p>
+						</div>
+						<div class="step-connector">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
 							</svg>
 						</div>
 					</div>
-					<div class="step-arrow">→</div>
-					<div class="step">
-						<div class="step-number">3</div>
-						<h3>Let AI Take Over</h3>
-						<p>
-							Our intelligent system automatically
-							manages savings, investments, and
-							budgeting based on your profile.
-						</p>
-						<div class="step-visual">
-							<svg
-								viewBox="0 0 100 100"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect
-									x="20"
-									y="20"
-									width="60"
-									height="60"
-									fill="none"
-									stroke="#14B8A6"
-									stroke-width="2"
-									rx="4"
-								/>
-								<circle
-									cx="50"
-									cy="50"
-									r="15"
-									fill="#14B8A6"
-								/>
-								<text
-									x="50"
-									y="55"
-									text-anchor="middle"
-									fill="white"
-									font-size="24"
+
+					<!-- Step 3 -->
+					<div class="step-item">
+						<div class="step-card">
+							<div class="step-header">
+								<div
+									class="step-icon-wrapper step-icon-3"
 								>
-									🤖
-								</text>
+									<svg
+										class="step-icon"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+									>
+										<path
+											d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+										/>
+										<path
+											d="M12.5 7v5l4.25 2.5"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<circle
+											cx="12"
+											cy="12"
+											r="3"
+											fill="currentColor"
+											opacity="0.3"
+										/>
+									</svg>
+								</div>
+								<div class="step-number">03</div>
+							</div>
+							<h3 class="step-title">
+								AI Takes Over
+							</h3>
+							<p class="step-description">
+								Our intelligent system
+								automatically manages your
+								savings, investments, and
+								budgeting based on your unique
+								profile.
+							</p>
+						</div>
+						<div class="step-connector">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+							>
+								<path
+									d="M5 12h14M12 5l7 7-7 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
 							</svg>
 						</div>
 					</div>
-					<div class="step-arrow">→</div>
-					<div class="step">
-						<div class="step-number">4</div>
-						<h3>Watch Your Money Grow</h3>
-						<p>
-							Monitor real-time progress, get
-							insights, and receive personalized
-							recommendations to optimize further.
-						</p>
-						<div class="step-visual">
-							<svg
-								viewBox="0 0 100 100"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect
-									x="20"
-									y="20"
-									width="60"
-									height="60"
-									fill="none"
-									stroke="#14B8A6"
-									stroke-width="2"
-									rx="4"
-								/>
-								<circle
-									cx="50"
-									cy="50"
-									r="15"
-									fill="#14B8A6"
-								/>
-								<text
-									x="50"
-									y="55"
-									text-anchor="middle"
-									fill="white"
-									font-size="24"
+
+					<!-- Step 4 -->
+					<div class="step-item">
+						<div class="step-card">
+							<div class="step-header">
+								<div
+									class="step-icon-wrapper step-icon-4"
 								>
-									📈
-								</text>
-							</svg>
+									<svg
+										class="step-icon"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+									>
+										<polyline
+											points="23 6 13.5 15.5 8 10 1 17"
+										></polyline>
+										<polyline
+											points="17 6 23 6 23 12"
+										></polyline>
+										<path
+											d="M3 21h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+								<div class="step-number">04</div>
+							</div>
+							<h3 class="step-title">
+								Watch Growth
+							</h3>
+							<p class="step-description">
+								Monitor real-time progress, get
+								personalized insights, and receive
+								AI-powered recommendations to
+								optimize further.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Features highlight -->
+				<div class="how-it-works-features">
+					<div class="feature-highlight">
+						<div class="feature-icon">⚡</div>
+						<div>
+							<h4>Lightning Fast</h4>
+							<p>
+								Complete setup in under 5 minutes
+							</p>
+						</div>
+					</div>
+					<div class="feature-highlight">
+						<div class="feature-icon">🔒</div>
+						<div>
+							<h4>Bank-Level Security</h4>
+							<p>
+								Your data is encrypted and
+								protected
+							</p>
+						</div>
+					</div>
+					<div class="feature-highlight">
+						<div class="feature-icon">🎯</div>
+						<div>
+							<h4>Fully Automated</h4>
+							<p>
+								No manual work required after
+								setup
+							</p>
 						</div>
 					</div>
 				</div>
@@ -440,144 +857,358 @@
 
 		<!-- Unique Selling Proposition -->
 		<section class="usp">
+			<div class="usp-background">
+				<div
+					class="usp-gradient-orb usp-orb-1"
+				></div>
+				<div
+					class="usp-gradient-orb usp-orb-2"
+				></div>
+				<div class="usp-accent-line"></div>
+			</div>
+
 			<div class="container">
-				<div class="usp-content">
-					<h2>Our Unique Promise</h2>
-					<p class="usp-text">
-						Mintly is the
-						<strong
-							>only personal finance app</strong
+				<div class="usp-header">
+					<div class="usp-badge">
+						<span class="badge-text"
+							>Why Mintly Stands Out</span
 						>
-						that fully automates savings,
-						investments, and budgeting with AI
-						tailored to your lifestyle. We don't
-						just track your money—we make it work
-						for you automatically.
+					</div>
+					<h2 class="usp-title">
+						The Only AI-Powered Finance App Built
+						for Automation
+					</h2>
+					<p class="usp-subtitle">
+						We don't just track your money—we make
+						it work for you automatically
 					</p>
-					<ul class="usp-features">
-						<li>
-							✓ 100% Automated Savings &
-							Investments
-						</li>
-						<li>
-							✓ AI Customized to Your Lifestyle
-						</li>
-						<li>
-							✓ Real-Time Insights &
-							Recommendations
-						</li>
-						<li>
-							✓ Zero-Hassle Setup & Management
-						</li>
-						<li>
-							✓ Bank-Level Security & Privacy
-						</li>
-					</ul>
+				</div>
+
+				<div class="usp-content">
+					<!-- Left column: Main value proposition -->
+					<div class="usp-value-column">
+						<div class="usp-highlight-card">
+							<div class="highlight-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+									/>
+									<path d="M12 6v6l4 2" />
+									<path
+										d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z"
+										fill="currentColor"
+										opacity="0.2"
+									/>
+								</svg>
+							</div>
+							<h3>Fully Automated</h3>
+							<p>
+								Set up once. Our AI handles
+								everything from savings to
+								investments to budgeting. No
+								manual work, no second-guessing.
+							</p>
+						</div>
+
+						<div class="usp-highlight-card">
+							<div class="highlight-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+								>
+									<path d="M9 11l3 3L22 4" />
+									<path
+										d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+							</div>
+							<h3>AI That Learns You</h3>
+							<p>
+								Our intelligent system understands
+								your lifestyle, goals, and risk
+								tolerance. It gets smarter the
+								more you use it.
+							</p>
+						</div>
+					</div>
+
+					<!-- Right column: Feature list -->
+					<div class="usp-features-column">
+						<h3 class="features-title">
+							What Makes Us Different
+						</h3>
+						<div class="usp-features-list">
+							<div class="feature-item">
+								<div class="feature-check">✓</div>
+								<div class="feature-text">
+									<div class="feature-name">
+										100% Automated Savings &
+										Investments
+									</div>
+									<div class="feature-desc">
+										Round-ups, smart allocations,
+										and portfolio rebalancing—all
+										automatic
+									</div>
+								</div>
+							</div>
+
+							<div class="feature-item">
+								<div class="feature-check">✓</div>
+								<div class="feature-text">
+									<div class="feature-name">
+										AI Customized to Your
+										Lifestyle
+									</div>
+									<div class="feature-desc">
+										Learns your spending patterns
+										and optimizes automatically
+									</div>
+								</div>
+							</div>
+
+							<div class="feature-item">
+								<div class="feature-check">✓</div>
+								<div class="feature-text">
+									<div class="feature-name">
+										Real-Time Insights &
+										Recommendations
+									</div>
+									<div class="feature-desc">
+										Get personalized advice
+										tailored to your financial
+										situation
+									</div>
+								</div>
+							</div>
+
+							<div class="feature-item">
+								<div class="feature-check">✓</div>
+								<div class="feature-text">
+									<div class="feature-name">
+										Zero-Hassle Setup & Management
+									</div>
+									<div class="feature-desc">
+										Simple onboarding. Complex
+										algorithms working behind the
+										scenes
+									</div>
+								</div>
+							</div>
+
+							<div class="feature-item">
+								<div class="feature-check">✓</div>
+								<div class="feature-text">
+									<div class="feature-name">
+										Bank-Level Security & Privacy
+									</div>
+									<div class="feature-desc">
+										Military-grade encryption and
+										industry-standard protocols
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Bottom CTA section -->
+				<div class="usp-cta-section">
+					<p class="usp-cta-text">
+						Ready to transform your financial
+						life?
+					</p>
+					<button class="cta-btn cta-btn-primary">
+						<span
+							>Start Automating Your Money</span
+						>
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+						>
+							<path
+								d="M5 12h14M12 5l7 7-7 7"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</button>
+					<p class="usp-cta-subtext">
+						No credit card required • Takes 5
+						minutes • Free forever plan available
+					</p>
 				</div>
 			</div>
 		</section>
 
 		<!-- Social Proof Section -->
 		<section class="social-proof">
+			<div class="social-proof-background">
+				<div
+					class="social-proof-gradient-orb social-proof-orb-1"
+				></div>
+				<div
+					class="social-proof-gradient-orb social-proof-orb-2"
+				></div>
+				<div
+					class="social-proof-accent-line"
+				></div>
+			</div>
+
 			<div class="container">
-				<h2>
-					Loved by Users. Trusted by Institutions.
-				</h2>
+				<div class="social-proof-header">
+					<div class="social-proof-badge">
+						<span class="badge-text"
+							>Community Love</span
+						>
+					</div>
+					<h2 class="social-proof-title">
+						Loved by Users. Trusted by
+						Institutions.
+					</h2>
+					<p class="social-proof-subtitle">
+						Join thousands who've transformed
+						their financial lives with Mintly's
+						intelligent automation
+					</p>
+				</div>
 
-				<!-- Testimonials Carousel -->
-				<div class="testimonials-carousel">
-					<div class="testimonial-slide active">
-						<div class="testimonial">
-							<div class="stars">⭐⭐⭐⭐⭐</div>
-							<p class="testimonial-text">
-								"Mintly changed how I think about
-								money. I set it up once, and now
-								I'm saving more than I ever
-								thought possible. Highly
-								recommend!"
-							</p>
-							<p class="testimonial-author">
-								— Sarah M., Marketing Professional
-							</p>
+				<!-- Testimonials Grid -->
+				<div class="testimonials-grid">
+					<div class="testimonial-card">
+						<div class="testimonial-header">
+							<div class="testimonial-avatar">
+								SM
+							</div>
+							<div class="testimonial-meta">
+								<div class="testimonial-name">
+									Sarah M.
+								</div>
+								<div class="testimonial-role">
+									Marketing Professional
+								</div>
+							</div>
 						</div>
+						<div class="testimonial-rating">
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+						</div>
+						<p class="testimonial-text">
+							"Mintly changed how I think about
+							money. I set it up once, and now I'm
+							saving more than I ever thought
+							possible. Highly recommend!"
+						</p>
 					</div>
-					<div class="testimonial-slide">
-						<div class="testimonial">
-							<div class="stars">⭐⭐⭐⭐⭐</div>
-							<p class="testimonial-text">
-								"The AI recommendations are
-								spot-on. It feels like having a
-								personal financial advisor in my
-								pocket. Best financial app I've
-								used."
-							</p>
-							<p class="testimonial-author">
-								— James R., Software Engineer
-							</p>
+
+					<div class="testimonial-card">
+						<div class="testimonial-header">
+							<div class="testimonial-avatar">
+								JR
+							</div>
+							<div class="testimonial-meta">
+								<div class="testimonial-name">
+									James R.
+								</div>
+								<div class="testimonial-role">
+									Software Engineer
+								</div>
+							</div>
 						</div>
+						<div class="testimonial-rating">
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+						</div>
+						<p class="testimonial-text">
+							"The AI recommendations are spot-on.
+							It feels like having a personal
+							financial advisor in my pocket. Best
+							financial app I've used."
+						</p>
 					</div>
-					<div class="testimonial-slide">
-						<div class="testimonial">
-							<div class="stars">⭐⭐⭐⭐⭐</div>
-							<p class="testimonial-text">
-								"Finally, an app that makes
-								investing accessible and
-								automatic. I'm more confident
-								about my financial future thanks
-								to Mintly."
-							</p>
-							<p class="testimonial-author">
-								— Alex T., Small Business Owner
-							</p>
+
+					<div class="testimonial-card">
+						<div class="testimonial-header">
+							<div class="testimonial-avatar">
+								AT
+							</div>
+							<div class="testimonial-meta">
+								<div class="testimonial-name">
+									Alex T.
+								</div>
+								<div class="testimonial-role">
+									Small Business Owner
+								</div>
+							</div>
 						</div>
+						<div class="testimonial-rating">
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+							<span class="star">★</span>
+						</div>
+						<p class="testimonial-text">
+							"Finally, an app that makes
+							investing accessible and automatic.
+							I'm more confident about my
+							financial future thanks to Mintly."
+						</p>
 					</div>
 				</div>
 
-				<!-- Testimonial Navigation -->
-				<div class="carousel-controls">
-					<button
-						class="carousel-btn"
-						onclick="previousTestimonial()"
-					>
-						←
-					</button>
-					<div class="carousel-dots">
-						<span
-							class="dot active"
-							onclick="goToTestimonial(0)"
-						></span>
-						<span
-							class="dot"
-							onclick="goToTestimonial(1)"
-						></span>
-						<span
-							class="dot"
-							onclick="goToTestimonial(2)"
-						></span>
-					</div>
-					<button
-						class="carousel-btn"
-						onclick="nextTestimonial()"
-					>
-						→
-					</button>
-				</div>
-
-				<!-- Awards & Certifications -->
-				<div class="certifications">
-					<h3>Trusted by Leading Institutions</h3>
-					<div class="cert-grid">
-						<div class="cert-badge">
-							🏆 Best FinTech Startup 2025
+				<!-- Trust Badges -->
+				<div class="trust-badges-section">
+					<p class="trust-badges-title">
+						Trusted by Leading Institutions
+					</p>
+					<div class="trust-badges-grid">
+						<div class="trust-badge">
+							<div class="trust-badge-icon">
+								🏆
+							</div>
+							<div class="trust-badge-text">
+								Best FinTech Startup 2025
+							</div>
 						</div>
-						<div class="cert-badge">
-							🔒 SOC 2 Type II Certified
+						<div class="trust-badge">
+							<div class="trust-badge-icon">
+								🔒
+							</div>
+							<div class="trust-badge-text">
+								SOC 2 Type II Certified
+							</div>
 						</div>
-						<div class="cert-badge">
-							⭐ 4.9/5 App Store Rating
+						<div class="trust-badge">
+							<div class="trust-badge-icon">
+								⭐
+							</div>
+							<div class="trust-badge-text">
+								4.9/5 App Store Rating
+							</div>
 						</div>
-						<div class="cert-badge">
-							🛡️ ISO 27001 Compliant
+						<div class="trust-badge">
+							<div class="trust-badge-icon">
+								🛡️
+							</div>
+							<div class="trust-badge-text">
+								ISO 27001 Compliant
+							</div>
 						</div>
 					</div>
 				</div>
@@ -589,93 +1220,263 @@
 			class="signup"
 			id="signup"
 		>
+			<div class="signup-background">
+				<div
+					class="signup-gradient-orb signup-orb-1"
+				></div>
+				<div
+					class="signup-gradient-orb signup-orb-2"
+				></div>
+				<div class="signup-accent-line"></div>
+			</div>
+
 			<div class="container">
-				<h2>
-					Ready to Automate Your Financial Future?
-				</h2>
-				<p class="signup-subtitle">
-					Join thousands of users already growing
-					their wealth with Mintly.
-				</p>
+				<div class="signup-content">
+					<div class="signup-text-section">
+						<h2 class="signup-title">
+							Ready to Automate Your Financial
+							Future?
+						</h2>
+						<p class="signup-subtitle">
+							Join thousands of users already
+							growing their wealth with Mintly's
+							intelligent automation. Start your
+							free trial in minutes—no credit card
+							required.
+						</p>
 
-				<form
-					class="signup-form"
-					onsubmit="handleSignup(event)"
-				>
-					<div class="form-group">
-						<input
-							type="email"
-							placeholder="Enter your email"
-							required
-						/>
+						<div class="signup-benefits-list">
+							<div class="signup-benefit">
+								<div class="benefit-check">✓</div>
+								<span
+									>Set up in under 5 minutes</span
+								>
+							</div>
+							<div class="signup-benefit">
+								<div class="benefit-check">✓</div>
+								<span>No credit card needed</span>
+							</div>
+							<div class="signup-benefit">
+								<div class="benefit-check">✓</div>
+								<span
+									>Free forever plan
+									available</span
+								>
+							</div>
+						</div>
 					</div>
-					<button
-						type="submit"
-						class="cta-button large"
-					>
-						Get Started Free
-					</button>
-				</form>
 
-				<p class="form-footnote">
-					No credit card required. Start your free
-					trial instantly.
-				</p>
+					<div class="signup-form-section">
+						<div class="form-card">
+							<h3 class="form-title">
+								Get Started Today
+							</h3>
+							<form
+								class="signup-form"
+								onsubmit="handleSignup(event)"
+							>
+								<div class="form-group">
+									<input
+										type="email"
+										placeholder="Enter your email address"
+										required
+										aria-label="Email address"
+									/>
+									<span
+										class="form-focus-border"
+									></span>
+								</div>
+
+								<button
+									type="submit"
+									class="signup-button"
+								>
+									<span>Start Free Trial</span>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+									>
+										<path
+											d="M5 12h14M12 5l7 7-7 7"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+
+								<p class="form-footnote">
+									No credit card required • Takes
+									5 minutes • Free forever plan
+									available
+								</p>
+							</form>
+
+							<div class="trust-indicators">
+								<div class="trust-item">
+									<span class="trust-icon"
+										>🔒</span
+									>
+									<span>Bank-level security</span>
+								</div>
+								<div class="trust-item">
+									<span class="trust-icon"
+										>✓</span
+									>
+									<span>No commitment</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<!-- Footer -->
 		<footer class="footer">
+			<div class="footer-background">
+				<div
+					class="footer-gradient-orb footer-orb-1"
+				></div>
+				<div
+					class="footer-gradient-orb footer-orb-2"
+				></div>
+			</div>
+
 			<div class="container">
 				<div class="footer-content">
-					<div class="footer-section">
-						<h4>Mintly</h4>
-						<p>
+					<!-- Brand Column -->
+					<div
+						class="footer-section footer-brand"
+					>
+						<div class="footer-logo">
+							<h3>Mintly</h3>
+						</div>
+						<p class="footer-tagline">
 							Automate Your Money. Grow Your
 							Future.
+						</p>
+						<p class="footer-description">
+							Intelligent financial automation for
+							the modern investor. Set it once,
+							let AI handle the rest.
 						</p>
 						<div class="social-icons">
 							<a
 								href="#"
 								aria-label="Twitter"
-								>𝕏</a
+								title="Twitter"
 							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<path
+										d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 10 0 10 0"
+									/>
+								</svg>
+							</a>
 							<a
 								href="#"
 								aria-label="LinkedIn"
-								>in</a
+								title="LinkedIn"
 							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<path
+										d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+									/>
+									<circle
+										cx="4"
+										cy="4"
+										r="2"
+									/>
+								</svg>
+							</a>
 							<a
 								href="#"
 								aria-label="Instagram"
-								>📷</a
+								title="Instagram"
 							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<rect
+										x="2"
+										y="2"
+										width="20"
+										height="20"
+										rx="5"
+										ry="5"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+									/>
+									<circle
+										cx="12"
+										cy="12"
+										r="4"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+									/>
+									<circle
+										cx="17.5"
+										cy="6.5"
+										r="1.5"
+										fill="currentColor"
+									/>
+								</svg>
+							</a>
 							<a
 								href="#"
 								aria-label="Facebook"
-								>f</a
+								title="Facebook"
 							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="currentColor"
+								>
+									<path
+										d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 011-1h3z"
+									/>
+								</svg>
+							</a>
 						</div>
 					</div>
+
+					<!-- Product Column -->
 					<div class="footer-section">
-						<h4>Product</h4>
-						<ul>
+						<h4 class="footer-title">Product</h4>
+						<ul class="footer-links">
 							<li><a href="#">Features</a></li>
 							<li><a href="#">Pricing</a></li>
 							<li><a href="#">Security</a></li>
+							<li>
+								<a href="#">Integrations</a>
+							</li>
 						</ul>
 					</div>
+
+					<!-- Company Column -->
 					<div class="footer-section">
-						<h4>Company</h4>
-						<ul>
+						<h4 class="footer-title">Company</h4>
+						<ul class="footer-links">
 							<li><a href="#">About Us</a></li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">Careers</a></li>
+							<li><a href="#">Press</a></li>
 						</ul>
 					</div>
+
+					<!-- Support Column -->
 					<div class="footer-section">
-						<h4>Support</h4>
-						<ul>
+						<h4 class="footer-title">Support</h4>
+						<ul class="footer-links">
 							<li>
 								<a
 									href="mailto:support@mintly.app"
@@ -686,14 +1487,29 @@
 							<li>
 								<a href="#">Privacy Policy</a>
 							</li>
+							<li>
+								<a href="#">Terms of Service</a>
+							</li>
 						</ul>
 					</div>
 				</div>
+
+				<!-- Footer Bottom -->
+				<div class="footer-divider"></div>
 				<div class="footer-bottom">
-					<p>
-						&copy; 2025 Mintly. All rights
-						reserved.
-					</p>
+					<div class="footer-bottom-left">
+						<p>
+							&copy; 2025 Mintly. All rights
+							reserved.
+						</p>
+					</div>
+					<div class="footer-bottom-right">
+						<p>
+							Made with
+							<span class="heart">♥</span> for
+							financial freedom
+						</p>
+					</div>
 				</div>
 			</div>
 		</footer>
@@ -703,37 +1519,149 @@
 			class="live-chat-widget"
 			id="liveChatWidget"
 		>
+			<!-- Chat Header -->
 			<div
 				class="chat-header"
 				onclick="toggleChat()"
 			>
-				<span>💬 Chat with us</span>
-				<span class="close-chat">&times;</span>
+				<div class="chat-header-content">
+					<div class="chat-icon">
+						<svg
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+							/>
+						</svg>
+					</div>
+					<div class="chat-header-text">
+						<div class="chat-header-title">
+							Mintly Support
+						</div>
+						<div class="chat-header-status">
+							Typically replies within minutes
+						</div>
+					</div>
+				</div>
+				<button
+					class="chat-toggle-btn"
+					aria-label="Toggle chat"
+					onclick="toggleChat(); event.stopPropagation()"
+				>
+					<svg
+						class="toggle-icon"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+					>
+						<polyline
+							points="18 15 12 9 6 15"
+						></polyline>
+					</svg>
+				</button>
 			</div>
+
+			<!-- Chat Body -->
 			<div
 				class="chat-body"
 				id="chatBody"
 			>
-				<p>Hello! How can we help you today?</p>
+				<!-- Chat Messages -->
+				<div class="chat-messages">
+					<div class="chat-message bot-message">
+						<div class="message-bubble">
+							<p>
+								Hey there! 👋 How can we help you
+								today?
+							</p>
+						</div>
+						<span class="message-time"
+							>just now</span
+						>
+					</div>
+				</div>
+
+				<!-- Quick Replies -->
 				<div class="quick-replies">
+					<p class="quick-replies-label">
+						Quick replies:
+					</p>
 					<button
 						class="quick-reply"
 						onclick="sendQuickReply('I have a question')"
 					>
-						Question
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+						>
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+							></circle>
+							<path d="M12 16v-4M12 8h.01"></path>
+						</svg>
+						<span>I have a question</span>
 					</button>
 					<button
 						class="quick-reply"
 						onclick="sendQuickReply('I want to sign up')"
 					>
-						Sign Up Help
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+						>
+							<path
+								d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+							></path>
+							<circle
+								cx="12"
+								cy="7"
+								r="4"
+							></circle>
+						</svg>
+						<span>I want to sign up</span>
 					</button>
 					<button
 						class="quick-reply"
 						onclick="sendQuickReply('Feature inquiry')"
 					>
-						Features
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+						>
+							<path d="M12 2v20M2 12h20"></path>
+							<rect
+								x="5"
+								y="5"
+								width="14"
+								height="14"
+								rx="2"
+							></rect>
+						</svg>
+						<span>Feature inquiry</span>
 					</button>
+				</div>
+
+				<!-- Chat Footer -->
+				<div class="chat-footer">
+					<div class="footer-badge">
+						<svg
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+							/>
+						</svg>
+						<span
+							>Your chat is secure & private</span
+						>
+					</div>
 				</div>
 			</div>
 		</div>
