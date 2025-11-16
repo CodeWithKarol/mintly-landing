@@ -153,7 +153,7 @@ Widget Container (height: clamp(400px, 90vh, 600px))
 
 ### File Sizes
 
-- **styles.css**: ~4,751 lines of organized styles
+- **style.css**: ~4,664 lines of organized styles
 - **script.js**: ~354 lines with comprehensive comments
 - **index.html**: ~1,672 lines of semantic markup
 
@@ -162,33 +162,31 @@ Widget Container (height: clamp(400px, 90vh, 600px))
 ```
 mintly-landing/
 ├── index.html              # Main landing page (1,672 lines)
-│   ├── Hero section with badge & mockup
-│   ├── Benefits grid (6 cards)
-│   ├── How it works (5 steps with connectors)
-│   ├── USP section (highlight cards + features)
-│   ├── Social proof (testimonials + trust badges)
-│   ├── Signup form
-│   ├── Footer with navigation
-│   └── Live chat widget
-├── css/
-│   └── styles.css          # All styles (4,751 lines)
-│       ├── Color palette & design tokens
-│       ├── Global styles & layout
-│       ├── Section-specific styles
-│       ├── Component styles (cards, buttons, forms)
-│       ├── Chat widget redesign (frosted glass)
-│       ├── Animation keyframes
-│       └── Scroll animation classes
-├── js/
-│   └── script.js           # Interactivity (354 lines)
-│       ├── Testimonial carousel logic
-│       ├── Chat widget toggle & messaging
-│       ├── Form submission handling
-│       ├── Scroll-triggered animations
-│       ├── Keyboard navigation
-│       └── Mobile optimization
+├── style.css               # All styles (4,664 lines) - flattened
+├── script.js               # Interactivity (354 lines) - flattened
+├── favicon.svg             # Site favicon (root level)
+├── manifest.json           # PWA manifest
+├── robots.txt              # SEO robots file
+├── sitemap.xml             # SEO sitemap
+├── .htaccess               # Server configuration
+├── assets/                 # Images and icons
+│   ├── icons/              # App icons and assets
+│   └── images/             # Page images and illustrations
 └── [Documentation files]   # Guides and setup instructions
+    ├── README.md           # This file
+    ├── START_HERE.md       # Quick setup guide
+    ├── STYLE_GUIDE.md      # Design system
+    └── [Other docs]        # Additional resources
 ```
+
+**Key Improvements:**
+
+- ✓ Simplified structure - CSS, JS, and favicon at root level
+- ✓ Easier file access - no nested subdirectories
+- ✓ Faster development - fewer folder clicks
+- ✓ Cleaner git history - flat file layout
+- ✓ Better for small projects - reduces complexity
+- ✓ Auto-discovered favicon - browsers find it automatically
 
 ## 🚀 Getting Started
 
@@ -224,14 +222,14 @@ php -S localhost:8000
 
 ### Modify Colors
 
-- Edit CSS variables in `css/styles.css` (lines 1-50)
+- Edit CSS variables in `style.css` (lines 1-20)
 - Available variables: `--color-teal`, `--color-navy`, `--color-gray-*`, etc.
 
 ### Adjust Animations
 
-- **Change Timing**: Update animation duration values (e.g., `0.8s` → `1.2s`)
-- **Change Delays**: Modify `animation-delay` values in nth-child selectors
-- **Change Effects**: Modify keyframe animations in `@keyframes` definitions
+- **Change Timing**: Update animation duration values in `style.css` (e.g., `0.5s` → `0.8s`)
+- **Change Delays**: Modify `animation-delay` values in nth-child selectors in `style.css`
+- **Change Effects**: Modify `@keyframes` definitions in `style.css` (lines ~3900-3970)
 
 ### Responsive Breakpoints
 
@@ -444,19 +442,19 @@ To add features or improvements:
 
 To modify animations:
 
-1. **Edit Duration**: Change `0.6s` values in `.animate` classes (lines 4035-4195 in styles.css)
-2. **Edit Delays**: Change `animation-delay` values in `nth-child(n)` selectors
-3. **Edit Effects**: Modify `@keyframes` definitions (lines 3900-4030)
+1. **Edit Duration**: Change `0.5s` values in `.animate` classes in `style.css` (lines ~3975-4100)
+2. **Edit Delays**: Change `animation-delay` values in `nth-child(n)` selectors in `style.css`
+3. **Edit Effects**: Modify `@keyframes` definitions in `style.css` (lines ~3900-3970)
 4. **Add New Animations**: Create new keyframes and corresponding `.selector.animate` rules
 
 ### Chat Widget Customization
 
 To modify the chat widget:
 
-1. **Edit Colors**: Change `--color-teal` and header gradient in CSS variables (lines 6-20)
-2. **Edit Size**: Modify `clamp()` values in `.live-chat-widget` (height, width)
-3. **Edit Messages**: Update responses object in `sendQuickReply()` function (lines ~110-120 in script.js)
-4. **Edit UI**: Modify HTML structure in `<div id="liveChatWidget">` section (lines ~1519-1650 in index.html)
+1. **Edit Colors**: Change `--color-teal` in `style.css` (lines 6-20)
+2. **Edit Size**: Modify `clamp()` values in `.live-chat-widget` in `style.css`
+3. **Edit Messages**: Update responses object in `sendQuickReply()` function in `script.js` (lines ~110-120)
+4. **Edit UI**: Modify HTML structure in `<div id="liveChatWidget">` section in `index.html` (lines ~1519-1650)
 
 ## 📝 License
 
@@ -472,17 +470,17 @@ See LICENSE file for details.
 
 ### Useful File Locations
 
-| File                               | Purpose              | Key Content                           |
-| ---------------------------------- | -------------------- | ------------------------------------- |
-| `index.html`                       | Page structure       | All sections, components, HTML markup |
-| `css/styles.css` (lines 1-50)      | Design tokens        | Color palette, typography, spacing    |
-| `css/styles.css` (lines 3470-3530) | Chat widget          | Modern frosted glass design           |
-| `css/styles.css` (lines 3900-4030) | Keyframe animations  | All animation definitions             |
-| `css/styles.css` (lines 4035-4195) | Scroll animations    | Component-specific animation triggers |
-| `js/script.js` (lines 1-65)        | Testimonial carousel | Auto-rotation and navigation          |
-| `js/script.js` (lines 75-130)      | Chat widget          | Toggle and messaging functions        |
-| `js/script.js` (lines 186-222)     | Scroll animations    | IntersectionObserver setup            |
-| `js/script.js` (lines 150-180)     | Form handling        | Email validation and submission       |
+| File                          | Purpose              | Key Content                           |
+| ----------------------------- | -------------------- | ------------------------------------- |
+| `index.html`                  | Page structure       | All sections, components, HTML markup |
+| `style.css` (lines 1-20)      | Design tokens        | Color palette, typography, spacing    |
+| `style.css` (lines 3470-3530) | Chat widget          | Modern frosted glass design           |
+| `style.css` (lines 3900-3970) | Keyframe animations  | All animation definitions             |
+| `style.css` (lines 3975-4100) | Scroll animations    | Component-specific animation triggers |
+| `script.js` (lines 1-65)      | Testimonial carousel | Auto-rotation and navigation          |
+| `script.js` (lines 75-130)    | Chat widget          | Toggle and messaging functions        |
+| `script.js` (lines 186-222)   | Scroll animations    | IntersectionObserver setup            |
+| `script.js` (lines 150-180)   | Form handling        | Email validation and submission       |
 
 ### CSS Animation Classes
 
