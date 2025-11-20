@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Customization Guide - Mintly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-teal: #14b8a6;
+            --color-teal-dark: #0d9488;
+            --color-navy: #1a1a2e;
+            --color-gray-600: #666;
+            --color-gray-200: #f5f5f5;
+            --color-white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-navy);
+            background: linear-gradient(135deg, #f9fafb 0%, #f0fdfa 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(20, 184, 166, 0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .toc {
+            background: var(--color-gray-200);
+            border-left: 4px solid var(--color-teal);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .toc h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: var(--color-navy);
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: var(--color-teal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--color-teal-dark);
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 50px 0;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: var(--color-navy);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-teal);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: var(--color-teal);
+            margin: 25px 0 15px 0;
+            margin-top: 30px;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            color: var(--color-navy);
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid var(--color-teal);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Monaco", "Courier New", monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .code-block code {
+            color: #333;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .tip {
+            background: #d1f4f5;
+            border-left: 4px solid var(--color-teal);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .tip strong {
+            color: var(--color-teal-dark);
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .warning strong {
+            color: #856404;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--color-teal);
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: var(--color-gray-200);
+        }
+
+        tbody tr:hover {
+            background: #e8f8f6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--color-teal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--color-teal);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+
+        .footer {
+            background: var(--color-gray-200);
+            padding: 30px 40px;
+            text-align: center;
+            color: var(--color-gray-600);
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--color-teal);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-teal-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎨 Product Customization Guide</h1>
+            <p>Complete instructions on how to modify products and features on your Mintly landing page</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>📑 Table of Contents</h2>
+                <ol>
+                    <li><a href="#structure">Understanding the Product Structure</a></li>
+                    <li><a href="#hero">Editing Hero Section</a></li>
+                    <li><a href="#features">Modifying Feature Cards</a></li>
+                    <li><a href="#steps">Updating How-It-Works Steps</a></li>
+                    <li><a href="#add-remove">Adding/Removing Products</a></li>
+                    <li><a href="#descriptions">Customizing Product Descriptions</a></li>
+                    <li><a href="#pricing">Updating Pricing Information</a></li>
+                    <li><a href="#common">Common Customization Tasks</a></li>
+                    <li><a href="#testing">Testing Your Changes</a></li>
+                </ol>
+            </div>
+
+            <!-- Section 1: Understanding Structure -->
+            <section id="structure">
+                <h2>🏗️ Understanding the Product Structure</h2>
+                <p>The landing page displays products and features in several organized sections. Understanding this structure will make customization easier.</p>
+
+                <h3>Main Sections on Your Landing Page</h3>
+                <ul>
+                    <li><strong>Hero Section</strong> - Main headline and call-to-action at the top</li>
+                    <li><strong>Benefits Section</strong> - 6 feature cards showing core benefits</li>
+                    <li><strong>How-It-Works Section</strong> - 5 step-by-step process cards</li>
+                    <li><strong>Unique Selling Proposition (USP)</strong> - Key differentiator</li>
+                    <li><strong>Testimonials Section</strong> - Customer social proof</li>
+                    <li><strong>Signup Section</strong> - Email capture form</li>
+                    <li><strong>Footer</strong> - Links, social media, and additional info</li>
+                </ul>
+
+                <h3>File Organization</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Purpose</th>
+                            <th>What It Contains</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight">index.html</span></td>
+                            <td>Page Structure</td>
+                            <td>All HTML elements and content</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">style.css</span></td>
+                            <td>Visual Styling</td>
+                            <td>Colors, fonts, layouts, animations</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">script.js</span></td>
+                            <td>Interactivity</td>
+                            <td>Chat widget, forms, animations</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip">
+                    <strong>💡 Pro Tip:</strong> All three files work together. Changing index.html changes content, style.css changes appearance, and script.js changes behavior.
+                </div>
+            </section>
+
+            <!-- Section 2: Hero Section -->
+            <section id="hero">
+                <h2>✨ Editing Hero Section</h2>
+                <p>The hero section is the first thing visitors see. It's crucial for making a strong first impression.</p>
+
+                <h3>Where to Find It</h3>
+                <p><strong>File:</strong> index.html<br><strong>Lines:</strong> 55-130</p>
+
+                <h3>Hero Section Components</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>What You Can Change:</h4>
+                        <ul>
+                            <li>Main Headline</li>
+                            <li>Subheadline/Description</li>
+                            <li>Primary CTA Button</li>
+                            <li>Secondary CTA Button</li>
+                            <li>Background Elements</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>What You Shouldn't Change:</h4>
+                        <ul>
+                            <li>Class names (affects styling)</li>
+                            <li>HTML structure (affects layout)</li>
+                            <li>IDs used in JavaScript</li>
+                            <li>onclick handlers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>How to Edit Step-by-Step</h3>
+
+                <h4><span class="step-number">1</span> Change the Main Headline</h4>
+                <div class="code-block"><code>&lt;h1 class="hero-headline"&gt;
+    Automate Your Money.&lt;br /&gt;Grow Your Future.
+&lt;/h1&gt;</code></div>
+                <p><strong>To change:</strong> Replace the text but keep the <span class="highlight">&lt;br /&gt;</span> tag to maintain the line break.</p>
+
+                <h4><span class="step-number">2</span> Update the Subheadline</h4>
+                <div class="code-block"><code>&lt;p class="hero-subheadline"&gt;
+    The only personal finance app that fully automates savings, 
+    investments, and budgeting with AI tailored to your lifestyle.
+&lt;/p&gt;</code></div>
+                <p><strong>To change:</strong> Replace the text with your new description. Recommended length: 100-120 characters.</p>
+
+                <h4><span class="step-number">3</span> Modify Primary Button</h4>
+                <div class="code-block"><code>&lt;button class="cta-button" 
+        onclick="document.getElementById('signupForm')
+        .scrollIntoView({ behavior: 'smooth' })"&gt;
+    Get Started Free
+&lt;/button&gt;</code></div>
+                <p><strong>To change:</strong> Only change the button text (e.g., "Get Started Free" → "Start Now" or "Try Free").</p>
+
+                <h4><span class="step-number">4</span> Add or Remove Buttons</h4>
+                <p>To add a secondary button, copy the primary button HTML and change the class:</p>
+                <div class="code-block"><code>&lt;button class="cta-button-secondary"&gt;
+    Learn More
+&lt;/button&gt;</code></div>
+                <p>For more buttons, repeat this pattern with different classes and text.</p>
+
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> Don't modify the onclick handler. This is what makes the button scroll to the signup form. Keep it as is unless you know JavaScript.
+                </div>
+            </section>
+
+            <!-- Section 3: Feature Cards -->
+            <section id="features">
+                <h2>🎯 Modifying Feature Cards</h2>
+                <p>The benefits section has 6 feature cards that showcase your product's key benefits. Each card is completely customizable.</p>
+
+                <h3>Where to Find Them</h3>
+                <p><strong>File:</strong> index.html<br><strong>Lines:</strong> 170-330</p>
+
+                <h3>Structure of a Feature Card</h3>
+                <div class="code-block"><code>&lt;div class="benefit-card animate-on-scroll slideInLeft"&gt;
+    &lt;div class="benefit-icon"&gt;
+        &lt;svg class="benefit-icon-svg"&gt;
+            &lt;!-- SVG icon code --&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;h3 class="benefit-title"&gt;Feature Title&lt;/h3&gt;
+    &lt;p class="benefit-description"&gt;
+        Feature description explaining the benefit 
+        and how it helps users.
+    &lt;/p&gt;
+&lt;/div&gt;</code></div>
+
+                <h3>How to Customize a Feature Card</h3>
+
+                <h4><span class="step-number">1</span> Change the Feature Title</h4>
+                <div class="code-block"><code>&lt;h3 class="benefit-title"&gt;AI-Powered Insights&lt;/h3&gt;</code></div>
+                <p>Replace the text with your feature name. Keep it short (2-4 words).</p>
+
+                <h4><span class="step-number">2</span> Update the Description</h4>
+                <div class="code-block"><code>&lt;p class="benefit-description"&gt;
+    Get intelligent recommendations tailored to your spending 
+    patterns and financial goals.
+&lt;/p&gt;</code></div>
+                <p>Replace with your description. Recommended length: 20-30 words.</p>
+
+                <h4><span class="step-number">3</span> Change the Icon (Option A: SVG)</h4>
+                <p>Replace the existing SVG code with a new icon. Find SVG icons at:</p>
+                <ul>
+                    <li><a href="https://heroicons.com" target="_blank">Heroicons.com</a></li>
+                    <li><a href="https://feathericons.com" target="_blank">Feathericons.com</a></li>
+                    <li><a href="https://www.flaticon.com" target="_blank">Flaticon.com</a></li>
+                </ul>
+
+                <h4><span class="step-number">3</span> Change the Icon (Option B: Emoji)</h4>
+                <p>For quick changes, replace the SVG with an emoji:</p>
+                <div class="code-block"><code>&lt;div class="benefit-icon" style="font-size: 2.5rem;"&gt;
+    💰
+&lt;/div&gt;</code></div>
+                <p>Popular emojis: 💰 💡 🎯 📈 🔒 ⚡ 🚀 📱</p>
+
+                <h4><span class="step-number">4</span> Add a New Feature Card</h4>
+                <ol>
+                    <li>Copy an entire <span class="highlight">&lt;div class="benefit-card"&gt;</span> block</li>
+                    <li>Paste it after the last card</li>
+                    <li>Update the title, description, and icon</li>
+                    <li>The layout automatically adjusts</li>
+                </ol>
+
+                <h4><span class="step-number">5</span> Remove a Feature Card</h4>
+                <p>Simply delete the entire <span class="highlight">&lt;div class="benefit-card"&gt;...&lt;/div&gt;</span> block. The layout will adjust automatically.</p>
+
+                <h3>Animation Classes for Cards</h3>
+                <p>Each card has an animation when scrolling into view. You can change the class:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class Name</th>
+                            <th>Animation Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight">slideInLeft</span></td>
+                            <td>Slides in from the left</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">slideInRight</span></td>
+                            <td>Slides in from the right</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">fadeInUp</span></td>
+                            <td>Fades in from below</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">scaleIn</span></td>
+                            <td>Scales up from small</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip">
+                    <strong>💡 Pro Tip:</strong> Alternate animations for visual interest. Use slideInLeft, slideInRight, slideInLeft, etc.
+                </div>
+            </section>
+
+            <!-- Section 4: How-It-Works Steps -->
+            <section id="steps">
+                <h2>📊 Updating How-It-Works Steps</h2>
+                <p>The 5-step process section shows users how to get started with your product. It's a great place to show value quickly.</p>
+
+                <h3>Where to Find It</h3>
+                <p><strong>File:</strong> index.html<br><strong>Lines:</strong> 360-530</p>
+
+                <h3>Structure of a Step Card</h3>
+                <div class="code-block"><code>&lt;div class="step-card animate-on-scroll fadeInUp"&gt;
+    &lt;div class="step-number"&gt;1&lt;/div&gt;
+    &lt;h3 class="step-title"&gt;Step Title&lt;/h3&gt;
+    &lt;p class="step-description"&gt;
+        Explanation of what happens in this step.
+    &lt;/p&gt;
+&lt;/div&gt;</code></div>
+
+                <h3>How to Edit Steps</h3>
+
+                <h4><span class="step-number">1</span> Update Step Number</h4>
+                <p>Make sure numbers go 1, 2, 3, 4, 5 in order:</p>
+                <div class="code-block"><code>&lt;div class="step-number"&gt;1&lt;/div&gt;</code></div>
+
+                <h4><span class="step-number">2</span> Change Step Title</h4>
+                <div class="code-block"><code>&lt;h3 class="step-title"&gt;Sign Up&lt;/h3&gt;</code></div>
+                <p>Keep titles short and action-oriented (2-3 words).</p>
+
+                <h4><span class="step-number">3</span> Modify Step Description</h4>
+                <div class="code-block"><code>&lt;p class="step-description"&gt;
+    Create your free account in seconds using email or social login.
+&lt;/p&gt;</code></div>
+                <p>Recommended length: 30-50 words. Explain what happens in this step clearly.</p>
+
+                <h4><span class="step-number">4</span> Add New Steps</h4>
+                <ol>
+                    <li>Copy a complete <span class="highlight">&lt;div class="step-card"&gt;...&lt;/div&gt;</span> block</li>
+                    <li>Increment the step number (e.g., from 5 to 6)</li>
+                    <li>Update title and description</li>
+                    <li><strong>Note:</strong> Maximum 5 steps recommended for optimal layout. 6+ requires CSS changes.</li>
+                </ol>
+
+                <h4><span class="step-number">5</span> Remove Steps</h4>
+                <p>Delete the entire step card block. Renumber remaining steps if needed.</p>
+
+                <div class="tip">
+                    <strong>💡 Pro Tip:</strong> Keep steps concise. Users should understand the entire process in under 30 seconds.
+                </div>
+            </section>
+
+            <!-- Section 5: Adding/Removing Products -->
+            <section id="add-remove">
+                <h2>➕ Adding/Removing Products</h2>
+                <p>If you want to add entirely new product sections or remove existing ones, follow these guidelines.</p>
+
+                <h3>Adding a New Product Section</h3>
+
+                <h4>Step 1: Create Section Container</h4>
+                <div class="code-block"><code>&lt;section class="products-section" id="products"&gt;
+    &lt;div class="section-container"&gt;
+        &lt;h2 class="section-title"&gt;Our Products&lt;/h2&gt;
+        &lt;div class="products-grid"&gt;
+            &lt;!-- Product cards go here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></div>
+
+                <h4>Step 2: Add Product Cards</h4>
+                <div class="code-block"><code>&lt;div class="product-card"&gt;
+    &lt;h3&gt;Product Name&lt;/h3&gt;
+    &lt;p&gt;Product description&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Feature 1&lt;/li&gt;
+        &lt;li&gt;Feature 2&lt;/li&gt;
+        &lt;li&gt;Feature 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button class="cta-button"&gt;Learn More&lt;/button&gt;
+&lt;/div&gt;</code></div>
+
+                <h4>Step 3: Add CSS Styling</h4>
+                <p>Add custom styles to <span class="highlight">style.css</span>:</p>
+                <div class="code-block"><code>.product-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}</code></div>
+
+                <h3>Removing a Product Section</h3>
+                <p>Simply locate and delete the entire <span class="highlight">&lt;section class="products-section"&gt;...&lt;/section&gt;</span> block from index.html.</p>
+
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> When adding new sections, make sure to place them in a logical order. Typically: Hero → Benefits → How-It-Works → USP → Testimonials → Signup → Footer.
+                </div>
+            </section>
+
+            <!-- Section 6: Descriptions -->
+            <section id="descriptions">
+                <h2>📝 Customizing Product Descriptions</h2>
+                <p>Well-written descriptions are crucial for converting visitors. Here are best practices.</p>
+
+                <h3>Best Practices for Descriptions</h3>
+
+                <h4>✓ Focus on Benefits, Not Features</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>❌ Feature-Focused</th>
+                            <th>✅ Benefit-Focused</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI-powered algorithm</td>
+                            <td>Smart recommendations that save you time</td>
+                        </tr>
+                        <tr>
+                            <td>Real-time data sync</td>
+                            <td>Your finances are always up-to-date</td>
+                        </tr>
+                        <tr>
+                            <td>256-bit encryption</td>
+                            <td>Your data is completely secure</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-platform support</td>
+                            <td>Access your money from anywhere</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>✓ Use Action Words</h4>
+                <ul>
+                    <li>"Automate" instead of "System" or "Tool"</li>
+                    <li>"Discover" instead of "See" or "Find"</li>
+                    <li>"Achieve" instead of "Get" or "Reach"</li>
+                    <li>"Transform" instead of "Change" or "Make"</li>
+                    <li>"Empower" instead of "Enable" or "Allow"</li>
+                </ul>
+
+                <h4>✓ Keep It Clear and Simple</h4>
+                <ul>
+                    <li>Avoid jargon and industry-specific terms</li>
+                    <li>Use short sentences (under 20 words)</li>
+                    <li>Write for your target audience</li>
+                    <li>One idea per sentence</li>
+                </ul>
+
+                <h3>Description Length Guidelines</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Recommended Length</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hero Subheadline</td>
+                            <td>100-120 characters</td>
+                            <td>"Track spending, set budgets, and achieve financial goals with AI-powered insights"</td>
+                        </tr>
+                        <tr>
+                            <td>Feature Description</td>
+                            <td>20-30 words</td>
+                            <td>"Get intelligent recommendations tailored to your spending patterns and financial goals."</td>
+                        </tr>
+                        <tr>
+                            <td>Step Description</td>
+                            <td>30-50 words</td>
+                            <td>"Create your free account in seconds using email or social login. No credit card required."</td>
+                        </tr>
+                        <tr>
+                            <td>Section Description</td>
+                            <td>50-80 words</td>
+                            <td>"Our powerful AI analyzes your spending habits and automatically optimizes your finances. Achieve your financial goals faster than ever before."</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Description Locations in Files</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>File</th>
+                            <th>Lines</th>
+                            <th>Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hero</td>
+                            <td>index.html</td>
+                            <td>70-75</td>
+                            <td>.hero-subheadline</td>
+                        </tr>
+                        <tr>
+                            <td>Benefits</td>
+                            <td>index.html</td>
+                            <td>170-330</td>
+                            <td>.benefit-description</td>
+                        </tr>
+                        <tr>
+                            <td>How-It-Works</td>
+                            <td>index.html</td>
+                            <td>360-530</td>
+                            <td>.step-description</td>
+                        </tr>
+                        <tr>
+                            <td>USP</td>
+                            <td>index.html</td>
+                            <td>550-620</td>
+                            <td>.usp-description</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonials</td>
+                            <td>index.html</td>
+                            <td>900-1100</td>
+                            <td>.testimonial-text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 7: Pricing -->
+            <section id="pricing">
+                <h2>💰 Updating Pricing Information</h2>
+                <p>If your landing page includes pricing tiers, here's how to update them.</p>
+
+                <h3>Finding the Pricing Section</h3>
+                <p>Search your index.html for <span class="highlight">&lt;section class="pricing-section"&gt;</span> or look for text containing "pricing".</p>
+
+                <h3>Updating Individual Prices</h3>
+                <div class="code-block"><code>&lt;div class="price-tag"&gt;
+    $29&lt;span&gt;/month&lt;/span&gt;
+&lt;/div&gt;</code></div>
+                <p>Change $29 to your desired price. Keep the format consistent across all plans.</p>
+
+                <h3>Modifying Feature Lists</h3>
+
+                <h4>Add a Feature:</h4>
+                <div class="code-block"><code>&lt;ul class="features-list"&gt;
+    &lt;li&gt;✓ Existing Feature&lt;/li&gt;
+    &lt;li&gt;✓ New Feature You're Adding&lt;/li&gt;
+&lt;/ul&gt;</code></div>
+
+                <h4>Remove a Feature:</h4>
+                <p>Delete the entire <span class="highlight">&lt;li&gt;...&lt;/li&gt;</span> line.</p>
+
+                <h4>Update a Feature:</h4>
+                <p>Just edit the text inside the <span class="highlight">&lt;li&gt;</span> tags.</p>
+
+                <h3>Highlighting the Popular Plan</h3>
+                <p>To make a plan stand out, add the <span class="highlight">highlighted-plan</span> class:</p>
+                <div class="code-block"><code>&lt;div class="pricing-card highlighted-plan"&gt;
+    &lt;!-- Most popular plan --&gt;
+&lt;/div&gt;</code></div>
+
+                <h3>Pricing Best Practices</h3>
+                <ul>
+                    <li><strong>Consistency:</strong> Use same format ($X/month or $XX/year) across all plans</li>
+                    <li><strong>Clarity:</strong> Show what's included and what's not</li>
+                    <li><strong>Social Proof:</strong> Highlight the most popular plan</li>
+                    <li><strong>Simplicity:</strong> Keep feature lists to 5-7 items per plan</li>
+                    <li><strong>Visuals:</strong> Use checkmarks (✓) for included, X for excluded features</li>
+                </ul>
+            </section>
+
+            <!-- Section 8: Common Tasks -->
+            <section id="common">
+                <h2>⚙️ Common Customization Tasks</h2>
+                <p>Quick solutions for frequently requested changes.</p>
+
+                <h3>Change All Teal Colors</h3>
+                <p>All teal elements use <span class="highlight">var(--color-teal)</span> CSS variable.</p>
+                <div class="code-block"><code>/* In style.css, find the :root section (lines 1-50) */
+:root {
+    --color-teal: #14b8a6;  /* Change this color */
+    --color-teal-dark: #0d9488;
+    /* ... other variables ... */
+}</code></div>
+                <p>Change <span class="highlight">#14b8a6</span> to your desired color code. All teal elements automatically update!</p>
+
+                <h3>Update All Headlines</h3>
+                <div class="code-block"><code>/* In style.css, search for .section-title */
+.section-title {
+    font-size: 2.5em;
+    color: var(--color-navy);
+    font-weight: 800;
+    /* Make your changes here */
+}</code></div>
+
+                <h3>Adjust Animation Timing</h3>
+                <p>All animations use 0.5 second duration. To change globally:</p>
+                <div class="code-block"><code>/* In style.css, find animations and change duration */
+animation: slideInLeft 0.5s ease-out;
+/* Change 0.5s to 0.8s or 0.3s as desired */</code></div>
+
+                <h3>Change Button Styles</h3>
+                <div class="code-block"><code">/* In style.css, find .cta-button and .cta-button-secondary */
+.cta-button {
+    background-color: var(--color-teal);  /* Background color */
+    color: white;                          /* Text color */
+    border-radius: 8px;                   /* Corner roundness */
+    padding: 12px 32px;                   /* Button size */
+    /* Make your changes here */
+}</code></div>
+
+                <h3>Modify Font Sizes</h3>
+                <div class="code-block"><code>/* In style.css, find h1, h2, h3 etc. */
+h1 {
+    font-size: 3.5em;  /* Change this value */
+    font-weight: 800;
+}</code></div>
+
+                <h3>Add Custom Fonts</h3>
+                <p>In the <span class="highlight">&lt;head&gt;</span> of index.html, add:</p>
+                <div class="code-block"><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=YourFont&display=swap" rel="stylesheet"&gt;</code></div>
+                <p>Then in style.css, update the font-family:</p>
+                <div class="code-block"><code>body {
+    font-family: "YourFont", sans-serif;
+}</code></div>
+
+                <div class="tip">
+                    <strong>💡 Pro Tip:</strong> Test all customizations in different browsers (Chrome, Firefox, Safari) to ensure compatibility.
+                </div>
+            </section>
+
+            <!-- Section 9: Testing -->
+            <section id="testing">
+                <h2>✅ Testing Your Changes</h2>
+                <p>Always test after making modifications to ensure everything works correctly.</p>
+
+                <h3>Quick Testing Checklist</h3>
+                <ol>
+                    <li><strong>Save the file</strong> - Press Ctrl+S (or Cmd+S on Mac)</li>
+                    <li><strong>Refresh the browser</strong> - Press F5 or Ctrl+Shift+R (hard refresh to clear cache)</li>
+                    <li><strong>Check on desktop</strong> - View at 1920px width</li>
+                    <li><strong>Check on tablet</strong> - View at 768px width</li>
+                    <li><strong>Check on mobile</strong> - View at 480px or smaller</li>
+                    <li><strong>Test interactions</strong> - Click buttons, scroll, try forms</li>
+                    <li><strong>Check animations</strong> - Scroll through page and verify animations trigger</li>
+                    <li><strong>Test forms</strong> - Try submitting the signup form</li>
+                    <li><strong>Check links</strong> - Verify all buttons and links work</li>
+                    <li><strong>Open console</strong> - Press F12 and check for errors</li>
+                </ol>
+
+                <h3>Browser Developer Tools</h3>
+                <p>Open Developer Tools with F12 or Right-Click → Inspect. Use these features:</p>
+                <ul>
+                    <li><strong>Inspector/Elements Tab:</strong> View HTML and CSS</li>
+                    <li><strong>Console Tab:</strong> See JavaScript errors</li>
+                    <li><strong>Device Toolbar:</strong> Test responsive design (Ctrl+Shift+M)</li>
+                    <li><strong>Network Tab:</strong> Check if resources load properly</li>
+                </ul>
+
+                <h3>Responsive Design Testing</h3>
+                <p>Your page should look good at these breakpoints:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Width</th>
+                            <th>What to Check</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mobile Phone</td>
+                            <td>320px - 480px</td>
+                            <td>Text readable, buttons tappable, no overflow</td>
+                        </tr>
+                        <tr>
+                            <td>Tablet</td>
+                            <td>481px - 1024px</td>
+                            <td>Layout balanced, images clear, spacing good</td>
+                        </tr>
+                        <tr>
+                            <td>Desktop</td>
+                            <td>1025px+</td>
+                            <td>Full feature display, proper grid layout</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Common Issues and Fixes</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Problem</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Changes not showing</td>
+                            <td>Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)</td>
+                        </tr>
+                        <tr>
+                            <td>Layout broken</td>
+                            <td>Check for typos in class names. Class names are case-sensitive.</td>
+                        </tr>
+                        <tr>
+                            <td>Animations not working</td>
+                            <td>Verify animation class is spelled correctly (slideInLeft, not slideinleft)</td>
+                        </tr>
+                        <tr>
+                            <td>Buttons not clickable</td>
+                            <td>Check that onclick handler syntax is correct</td>
+                        </tr>
+                        <tr>
+                            <td>Forms not submitting</td>
+                            <td>Open browser console (F12) to see specific error messages</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Undoing Changes</h3>
+                <p>Made a mistake? Here are recovery options:</p>
+                <ul>
+                    <li><strong>Undo in Editor:</strong> Ctrl+Z (or Cmd+Z on Mac) - works within current session</li>
+                    <li><strong>Version Control:</strong> Use git to restore previous versions</li>
+                    <li><strong>Browser Cache:</strong> Clear browser cache if seeing outdated content</li>
+                    <li><strong>Original Files:</strong> Keep backups of original files</li>
+                </ul>
+
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> Always test thoroughly before deploying changes to your live site.
+                </div>
+            </section>
+
+            <!-- Reference Table -->
+            <section>
+                <h2>📖 Quick Reference Guide</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Content Type</th>
+                            <th>File</th>
+                            <th>Approximate Lines</th>
+                            <th>Primary Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Page Structure</td>
+                            <td>index.html</td>
+                            <td>1-1672</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>All Styling</td>
+                            <td>style.css</td>
+                            <td>1-4664</td>
+                            <td>Various</td>
+                        </tr>
+                        <tr>
+                            <td>Interactivity</td>
+                            <td>script.js</td>
+                            <td>1-354</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Colors & Fonts</td>
+                            <td>style.css</td>
+                            <td>1-100</td>
+                            <td>:root</td>
+                        </tr>
+                        <tr>
+                            <td>Animations</td>
+                            <td>style.css</td>
+                            <td>3900-4100</td>
+                            <td>@keyframes</td>
+                        </tr>
+                        <tr>
+                            <td>Hero Section</td>
+                            <td>index.html</td>
+                            <td>55-130</td>
+                            <td>.hero-*</td>
+                        </tr>
+                        <tr>
+                            <td>Benefits</td>
+                            <td>index.html</td>
+                            <td>140-330</td>
+                            <td>.benefit-*</td>
+                        </tr>
+                        <tr>
+                            <td>How-It-Works</td>
+                            <td>index.html</td>
+                            <td>340-530</td>
+                            <td>.step-*</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonials</td>
+                            <td>index.html</td>
+                            <td>880-1100</td>
+                            <td>.testimonial-*</td>
+                        </tr>
+                        <tr>
+                            <td>Signup Form</td>
+                            <td>index.html</td>
+                            <td>1200-1300</td>
+                            <td>#signupForm</td>
+                        </tr>
+                        <tr>
+                            <td>Footer</td>
+                            <td>index.html</td>
+                            <td>1600-1672</td>
+                            <td>.footer-*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>📚 Product Customization Guide</strong></p>
+            <p>Last Updated: November 2025 | Version 1.0</p>
+            <p>For more help, see the <a href="STYLE_GUIDE.md" style="color: var(--color-teal); text-decoration: none; font-weight: 600;">STYLE_GUIDE.md</a> file.</p>
+            <a href="#structure" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </div>
+</body>
+</html>
