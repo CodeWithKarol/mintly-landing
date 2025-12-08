@@ -7782,125 +7782,160 @@ input:checked + .slider:before {
    VIDEO MODAL
    ======================================== */
 .video-modal {
-display: none;
-position: fixed;
-z-index: 2000;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-overflow: auto;
-background-color: rgba(0, 0, 0, 0.8);
-backdrop-filter: blur(5px);
-align-items: center;
-justify-content: center;
-opacity: 0;
-transition: opacity 0.3s ease;
+	display: none;
+	position: fixed;
+	z-index: 2000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(5px);
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
 .video-modal.show {
-display: flex;
-opacity: 1;
+	display: flex;
+	opacity: 1;
 }
 
 .video-modal-content {
-position: relative;
-background-color: #000;
-margin: auto;
-padding: 0;
-width: 90%;
-max-width: 900px;
-border-radius: 16px;
-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-overflow: hidden;
-transform: scale(0.95);
-transition: transform 0.3s ease;
+	position: relative;
+	background-color: #000;
+	margin: auto;
+	padding: 0;
+	width: 90%;
+	max-width: 900px;
+	border-radius: 16px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	transform: scale(0.95);
+	transition: transform 0.3s ease;
 }
 
 .video-modal.show .video-modal-content {
-transform: scale(1);
+	transform: scale(1);
 }
 
 .close-modal {
-color: white;
-position: absolute;
-top: 10px;
-right: 20px;
-font-size: 35px;
-font-weight: bold;
-background: none;
-border: none;
-cursor: pointer;
-z-index: 10;
-line-height: 1;
-text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-transition: color 0.2s;
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 35px;
+	font-weight: bold;
+	background: none;
+	border: none;
+	cursor: pointer;
+	z-index: 10;
+	line-height: 1;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	transition: color 0.2s;
 }
 
 .close-modal:hover,
 .close-modal:focus {
-color: var(--color-teal);
-text-decoration: none;
-cursor: pointer;
+	color: var(--color-teal);
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .video-wrapper {
-position: relative;
-padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-height: 0;
-overflow: hidden;
-background: black;
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+	height: 0;
+	overflow: hidden;
+	background: black;
 }
 
 .video-wrapper video {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: contain;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
-
 
 /* ========================================
    SCROLL ANIMATIONS
    ======================================== */
 
 .reveal-element {
-opacity: 0;
-transform: translateY(30px);
-transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-will-change: transform, opacity;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s
+		cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: transform, opacity;
 }
 
 .reveal-element.revealed {
-opacity: 1;
-transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* Staggered delays */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
-.delay-400 { transition-delay: 0.4s; }
+.delay-100 {
+	transition-delay: 0.1s;
+}
+.delay-200 {
+	transition-delay: 0.2s;
+}
+.delay-300 {
+	transition-delay: 0.3s;
+}
+.delay-400 {
+	transition-delay: 0.4s;
+}
 
 /* Specific element adjustments */
 .hero-text-wrapper > * {
-opacity: 0;
-transform: translateY(20px);
-animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: heroFadeIn 0.8s
+		cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-text-wrapper > *:nth-child(1) { animation-delay: 0.1s; }
-.hero-text-wrapper > *:nth-child(2) { animation-delay: 0.2s; }
-.hero-text-wrapper > *:nth-child(3) { animation-delay: 0.3s; }
-.hero-text-wrapper > *:nth-child(4) { animation-delay: 0.4s; }
-.hero-text-wrapper > *:nth-child(5) { animation-delay: 0.5s; }
+.hero-text-wrapper > *:nth-child(1) {
+	animation-delay: 0.1s;
+}
+.hero-text-wrapper > *:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.hero-text-wrapper > *:nth-child(3) {
+	animation-delay: 0.3s;
+}
+.hero-text-wrapper > *:nth-child(4) {
+	animation-delay: 0.4s;
+}
+.hero-text-wrapper > *:nth-child(5) {
+	animation-delay: 0.5s;
+}
 
 @keyframes heroFadeIn {
-to {
-opacity: 1;
-transform: translateY(0);
-}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
+/* Mobile & Tablet Landscape Fix */
+@media (max-height: 800px) and (orientation: landscape) {
+	.chat-widget-container {
+		bottom: 20px;
+		right: 20px;
+	}
+
+	.chat-window {
+		right: 80px;
+		bottom: 5px;
+		width: 380px;
+		max-width: calc(100vw - 120px);
+		height: calc(100vh - 120px);
+		max-height: none;
+	}
+}
