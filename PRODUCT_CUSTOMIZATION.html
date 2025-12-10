@@ -1,548 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Customization Guide - Mintly</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      :root {
+        --color-teal: #14b8a6;
+        --color-teal-dark: #0d9488;
+        --color-navy: #1a1a2e;
+        --color-gray-600: #4b5563;
+        --color-gray-200: #e5e7eb;
+        --color-white: #ffffff;
+        --color-code-bg: #1e1e1e;
+      }
 
-        :root {
-            --color-teal: #14b8a6;
-            --color-teal-dark: #0d9488;
-            --color-navy: #1a1a2e;
-            --color-gray-600: #666;
-            --color-gray-200: #f5f5f5;
-            --color-white: #ffffff;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--color-navy);
-            background: linear-gradient(135deg, #f9fafb 0%, #f0fdfa 100%);
-            padding: 20px;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--color-navy);
+        background: #f3f4f6;
+        padding: 20px;
+      }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--color-white);
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(20, 184, 166, 0.08);
-            overflow: hidden;
-        }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: var(--color-white);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
 
-        .header {
-            background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-        }
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--color-teal) 0%,
+          var(--color-teal-dark) 100%
+        );
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
 
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+      }
 
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
+      .header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-        .content {
-            padding: 60px 40px;
-        }
+      .content {
+        padding: 3rem;
+      }
 
-        .toc {
-            background: var(--color-gray-200);
-            border-left: 4px solid var(--color-teal);
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 8px;
-        }
+      .section {
+        margin-bottom: 4rem;
+        border-bottom: 1px solid var(--color-gray-200);
+        padding-bottom: 3rem;
+      }
 
-        .toc h2 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: var(--color-navy);
-        }
+      .section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
 
-        .toc ol {
-            margin-left: 20px;
-        }
+      h2 {
+        font-size: 1.8rem;
+        color: var(--color-teal-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-        .toc li {
-            margin: 8px 0;
-        }
+      h3 {
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem;
+        color: var(--color-navy);
+      }
 
-        .toc a {
-            color: var(--color-teal);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+      p {
+        margin-bottom: 1rem;
+        color: var(--color-gray-600);
+      }
 
-        .toc a:hover {
-            color: var(--color-teal-dark);
-            text-decoration: underline;
-        }
+      ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+        color: var(--color-gray-600);
+      }
 
-        section {
-            margin: 50px 0;
-            scroll-margin-top: 100px;
-        }
+      li {
+        margin-bottom: 0.5rem;
+      }
 
-        h2 {
-            font-size: 2em;
-            color: var(--color-navy);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--color-teal);
-            display: inline-block;
-        }
+      code {
+        background: #f1f5f9;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: "Menlo", "Monaco", "Courier New", monospace;
+        font-size: 0.9em;
+        color: var(--color-teal-dark);
+      }
 
-        h3 {
-            font-size: 1.4em;
-            color: var(--color-teal);
-            margin: 25px 0 15px 0;
-            margin-top: 30px;
-        }
+      pre {
+        background: var(--color-code-bg);
+        color: #d4d4d4;
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        font-family: "Menlo", "Monaco", "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
 
-        h4 {
-            font-size: 1.1em;
-            color: var(--color-navy);
-            margin: 20px 0 10px 0;
-            font-weight: 600;
-        }
+      .note {
+        background: #f0fdfa;
+        border-left: 4px solid var(--color-teal);
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
 
-        p {
-            margin: 15px 0;
-            line-height: 1.8;
-        }
+      .note strong {
+        color: var(--color-teal-dark);
+      }
 
-        .code-block {
-            background: #f5f5f5;
-            border-left: 4px solid var(--color-teal);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-family: "Monaco", "Courier New", monospace;
-            font-size: 0.9em;
-            line-height: 1.5;
-        }
+      .file-structure {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--color-gray-200);
+      }
 
-        .code-block code {
-            color: #333;
-        }
+      .file-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        font-family: monospace;
+      }
 
-        .highlight {
-            background: #fff3cd;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: 500;
-        }
+      .toc {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 3rem;
+      }
 
-        .tip {
-            background: #d1f4f5;
-            border-left: 4px solid var(--color-teal);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
+      .toc h3 {
+        margin-top: 0;
+      }
 
-        .tip strong {
-            color: var(--color-teal-dark);
-        }
+      .toc ul {
+        margin-bottom: 0;
+        list-style: none;
+        padding-left: 0;
+      }
 
-        .warning {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
+      .toc a {
+        color: var(--color-teal-dark);
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem 0;
+        transition: color 0.2s;
+      }
 
-        .warning strong {
-            color: #856404;
-        }
+      .toc a:hover {
+        color: var(--color-teal);
+      }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        thead {
-            background: var(--color-teal);
-            color: white;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tbody tr:nth-child(odd) {
-            background: var(--color-gray-200);
-        }
-
-        tbody tr:hover {
-            background: #e8f8f6;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: var(--color-teal);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--color-teal-dark);
-            transform: translateY(-2px);
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: var(--color-teal);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        ul, ol {
-            margin: 15px 0 15px 30px;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 20px 0;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .header {
-                padding: 40px 20px;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .content {
-                padding: 30px 20px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            h3 {
-                font-size: 1.2em;
-            }
-        }
-
-        .footer {
-            background: var(--color-gray-200);
-            padding: 30px 40px;
-            text-align: center;
-            color: var(--color-gray-600);
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .back-to-top {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: var(--color-teal);
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top:hover {
-            background: var(--color-teal-dark);
-        }
+      .step-badge {
+        display: inline-block;
+        background: var(--color-teal);
+        color: white;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1> Product Customization Guide</h1>
-            <p>Complete instructions on how to modify products and features on your Mintly landing page (v2.0)</p>
+      <header class="header">
+        <h1>Mintly Landing Page</h1>
+        <p>Comprehensive Customization & Configuration Guide</p>
+      </header>
+
+      <div class="content">
+        <!-- Table of Contents -->
+        <div class="toc">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li><a href="#project-structure">1. Project Structure</a></li>
+            <li><a href="#global-styles">2. Global Styles & Branding</a></li>
+            <li><a href="#header-nav">3. Header & Navigation</a></li>
+            <li><a href="#hero-section">4. Hero Section</a></li>
+            <li><a href="#features-section">5. Features & Benefits</a></li>
+            <li><a href="#how-it-works">6. How It Works</a></li>
+            <li><a href="#pricing">7. Pricing Section</a></li>
+            <li><a href="#testimonials">8. Testimonials & Social Proof</a></li>
+            <li><a href="#faq">9. FAQ Section</a></li>
+            <li><a href="#footer">10. Footer & Newsletter</a></li>
+            <li>
+              <a href="#interactive">11. Interactive Elements (Chat & Video)</a>
+            </li>
+          </ul>
         </div>
 
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Table of Contents -->
-            <div class="toc">
-                <h2> Table of Contents</h2>
-                <ol>
-                    <li><a href="#structure">Understanding the Product Structure</a></li>
-                    <li><a href="#hero">Editing Hero Section</a></li>
-                    <li><a href="#bento">Modifying Bento Grid (Features)</a></li>
-                    <li><a href="#steps">Updating How-It-Works Steps</a></li>
-                    <li><a href="#pricing">Customizing Pricing Plans</a></li>
-                    <li><a href="#faq">Managing FAQ Section</a></li>
-                    <li><a href="#video">Updating Video Modal</a></li>
-                    <li><a href="#common">Common Customization Tasks</a></li>
-                    <li><a href="#testing">Testing Your Changes</a></li>
-                </ol>
+        <!-- Project Structure -->
+        <div id="project-structure" class="section">
+          <h2>1. Project Structure</h2>
+          <p>
+            The project is organized into a simple, flat structure for easy
+            maintenance.
+          </p>
+          <div class="file-structure">
+            <div class="file-item">📁 <strong>root/</strong></div>
+            <div class="file-item">
+              ├── 📄 <strong>index.html</strong> - Main structure and content
             </div>
+            <div class="file-item">
+              ├── 🎨 <strong>style.css</strong> - All visual styling and
+              responsiveness
+            </div>
+            <div class="file-item">
+              ├── 📜 <strong>script.js</strong> - Interactivity (mobile menu,
+              scroll effects, chat)
+            </div>
+            <div class="file-item">
+              └── 📝 <strong>PRODUCT_CUSTOMIZATION.html</strong> - This guide
+            </div>
+          </div>
+        </div>
 
-            <!-- Section 1: Understanding Structure -->
-            <section id="structure">
-                <h2> Understanding the Product Structure</h2>
-                <p>The landing page displays products and features in several organized sections. Understanding this structure will make customization easier.</p>
+        <!-- Global Styles -->
+        <div id="global-styles" class="section">
+          <h2>2. Global Styles & Branding</h2>
+          <p>
+            Customize the core look and feel of the landing page by modifying
+            CSS variables in <code>style.css</code>.
+          </p>
 
-                <h3>Main Sections on Your Landing Page</h3>
-                <ul>
-                    <li><strong>Hero Section</strong> - Main headline, CTA, and dashboard visuals</li>
-                    <li><strong>Bento Grid</strong> - Modern grid layout showing core benefits</li>
-                    <li><strong>How-It-Works</strong> - 3-step process timeline</li>
-                    <li><strong>USP Section</strong> - Unique Selling Proposition cards</li>
-                    <li><strong>Social Proof</strong> - Testimonials and Trust Logos</li>
-                    <li><strong>Pricing</strong> - Monthly/Yearly toggle with 3 tiers</li>
-                    <li><strong>FAQ</strong> - Accordion-style questions</li>
-                    <li><strong>Footer</strong> - Links, newsletter, and social media</li>
-                </ul>
+          <h3>Color Palette</h3>
+          <p>
+            Locate the <code>:root</code> selector at the top of
+            <code>style.css</code> to change the brand colors.
+          </p>
+          <pre><code>:root {
+    /* Primary Brand Colors */
+    --color-teal: #14b8a6;       /* Main accent color */
+    --color-teal-dark: #0d9488;  /* Hover states */
+    
+    /* Text & Background Colors */
+    --color-navy: #001f3f;       /* Headings */
+    --color-coral: #ff6b6b;      /* Secondary accents */
+    --color-white: #ffffff;      /* Backgrounds */
+    --color-light-bg: #f8fafb;   /* Section backgrounds */
+}</code></pre>
 
-                <h3>File Organization</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>File</th>
-                            <th>Purpose</th>
-                            <th>What It Contains</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="highlight">index.html</span></td>
-                            <td>Page Structure</td>
-                            <td>All HTML elements and content</td>
-                        </tr>
-                        <tr>
-                            <td><span class="highlight">style.css</span></td>
-                            <td>Visual Styling</td>
-                            <td>Colors, fonts, layouts, animations</td>
-                        </tr>
-                        <tr>
-                            <td><span class="highlight">script.js</span></td>
-                            <td>Interactivity</td>
-                            <td>Video modal, pricing toggle, scroll animations</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+          <h3>Typography</h3>
+          <p>
+            The project uses the "Inter" font family from Google Fonts. To
+            change it:
+          </p>
+          <ol>
+            <li>
+              Update the Google Fonts <code>&lt;link&gt;</code> in the
+              <code>&lt;head&gt;</code> of <code>index.html</code>.
+            </li>
+            <li>
+              Update the <code>--font-family</code> variable in
+              <code>style.css</code>.
+            </li>
+          </ol>
+        </div>
 
-            <!-- Section 2: Hero Section -->
-            <section id="hero">
-                <h2> Editing Hero Section</h2>
-                <p>The hero section is the first thing visitors see. It's crucial for making a strong first impression.</p>
+        <!-- Header & Navigation -->
+        <div id="header-nav" class="section">
+          <h2>3. Header & Navigation</h2>
+          <p>
+            The header contains the logo, navigation links, and CTA buttons. It
+            becomes sticky on scroll.
+          </p>
 
-                <h3>How to Edit Step-by-Step</h3>
+          <h3>Customizing the Logo</h3>
+          <p>
+            The logo is an SVG inside the <code>.logo</code> anchor tag. You can
+            replace the SVG code or use an <code>&lt;img&gt;</code> tag.
+          </p>
+          <pre><code>&lt;!-- In index.html --&gt;
+&lt;a href="#" class="logo"&gt;
+    &lt;!-- Replace SVG below with your logo --&gt;
+    &lt;svg class="logo-icon" ...&gt;...&lt;/svg&gt;
+    &lt;span class="logo-text"&gt;Mintly&lt;/span&gt;
+&lt;/a&gt;</code></pre>
 
-                <h4><span class="step-number">1</span> Change the Main Headline</h4>
-                <div class="code-block"><code>&lt;h1 class="hero-heading"&gt;
-    Master Your Money with
-    &lt;span class="text-gradient"&gt;AI Intelligence&lt;/span&gt;
-&lt;/h1&gt;</code></div>
-                <p><strong>To change:</strong> Replace the text. The text inside the <span class="highlight">&lt;span&gt;</span> will have the gradient effect.</p>
+          <h3>Navigation Links</h3>
+          <p>
+            Edit the links in the <code>.nav-links</code> div. Ensure the
+            <code>href</code> matches the section IDs (e.g.,
+            <code>#features</code>).
+          </p>
+          <div class="note">
+            <strong>Note:</strong> Remember to update both the Desktop
+            Navigation (<code>.nav-links</code>) and Mobile Navigation
+            (<code>.mobile-nav-content</code>) sections in
+            <code>index.html</code>.
+          </div>
+        </div>
 
-                <h4><span class="step-number">2</span> Update the Subheadline</h4>
-                <div class="code-block"><code>&lt;p class="hero-subheading"&gt;
-    Stop guessing. Start growing. Mintly automates your savings...
-&lt;/p&gt;</code></div>
+        <!-- Hero Section -->
+        <div id="hero-section" class="section">
+          <h2>4. Hero Section</h2>
+          <p>
+            The first section users see. It includes the main value proposition
+            and trust indicators.
+          </p>
 
-                <h4><span class="step-number">3</span> Modify Buttons</h4>
-                <div class="code-block"><code>&lt;a href="#signup" class="btn btn-primary btn-lg"&gt;
-    Start Free Trial
-&lt;/a&gt;</code></div>
-                <p>Change the text or the <span class="highlight">href</span> to link to a different page.</p>
-            </section>
+          <h3>Copywriting Guide</h3>
+          <ul>
+            <li>
+              <strong>Badge:</strong> <code>.hero-badge</code> - Short, punchy
+              proof point (e.g., "#1 AI Finance App").
+            </li>
+            <li>
+              <strong>Headline:</strong> <code>.hero-heading</code> - Main
+              benefit. Use <code>&lt;span class="text-gradient"&gt;</code> for
+              color emphasis.
+            </li>
+            <li>
+              <strong>Subheading:</strong> <code>.hero-subheading</code> -
+              Elaborate on the solution and key benefits.
+            </li>
+          </ul>
 
-            <!-- Section 3: Bento Grid -->
-            <section id="bento">
-                <h2> Modifying Bento Grid (Features)</h2>
-                <p>The features are displayed in a modern "Bento Grid" layout with large and small cards.</p>
+          <h3>Visuals</h3>
+          <p>
+            The hero image is located in <code>.hero-image-container</code>.
+            Replace the <code>src</code> attribute of the <code>img</code> tag.
+          </p>
+          <pre><code>&lt;img 
+    src="YOUR_IMAGE_URL" 
+    alt="Description of image" 
+    class="hero-main-image" 
+/&gt;</code></pre>
+          <p>
+            <strong>Floating Cards:</strong> The floating stats (Savings,
+            Investment) are HTML elements <code>.float-card</code> overlaid on
+            the image. You can edit their values directly in the HTML.
+          </p>
+        </div>
 
-                <h3>Structure of a Bento Card</h3>
-                <div class="code-block"><code>&lt;div class="bento-card large-card card-ai"&gt;
-    &lt;div class="card-content"&gt;
-        &lt;h3&gt;AI-Powered Automation&lt;/h3&gt;
-        &lt;p&gt;Description here...&lt;/p&gt;
+        <!-- Features Section -->
+        <div id="features-section" class="section">
+          <h2>5. Features & Benefits</h2>
+          <p>
+            Located in the
+            <code>&lt;section class="benefits" id="features"&gt;</code>. It uses
+            a Bento Grid layout.
+          </p>
+
+          <h3>Customizing Cards</h3>
+          <p>
+            There are two types of cards: <code>.large-card</code> and
+            <code>.small-card</code>.
+          </p>
+          <ul>
+            <li>
+              <strong>Icons:</strong> SVG code inside
+              <code>.icon-wrapper</code>. Replace with any SVG icon (24x24px
+              recommended).
+            </li>
+            <li>
+              <strong>Text:</strong> Edit the <code>&lt;h3&gt;</code> and
+              <code>&lt;p&gt;</code> tags inside each card.
+            </li>
+            <li>
+              <strong>Images:</strong> Large cards have a
+              <code>.card-visual</code> div containing an image.
+            </li>
+          </ul>
+        </div>
+
+        <!-- How It Works -->
+        <div id="how-it-works" class="section">
+          <h2>6. How It Works</h2>
+          <p>
+            A step-by-step timeline guide located in
+            <code>&lt;section class="how-it-works"&gt;</code>.
+          </p>
+
+          <h3>Structure</h3>
+          <p>
+            Each step is a <code>.process-step</code> div. Every second step has
+            the class <code>.reverse</code> to alternate the layout.
+          </p>
+          <ul>
+            <li>
+              <strong>Step Number:</strong> <code>.step-badge</code> (e.g.,
+              "Step 01").
+            </li>
+            <li>
+              <strong>Content:</strong> Edit the title, description, and the
+              <code>.check-list</code> items.
+            </li>
+            <li>
+              <strong>Visual:</strong> Each step has a
+              <code>.visual-card</code> with an image and a floating badge
+              (e.g., "Connected", "Goal: $50k").
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pricing -->
+        <div id="pricing" class="section">
+          <h2>7. Pricing Section</h2>
+          <p>
+            Displays 3 pricing tiers. The toggle switch is visual-only in this
+            template but can be hooked up to JS logic.
+          </p>
+
+          <h3>Editing Plans</h3>
+          <p>
+            Each plan is a <code>.pricing-card</code>. The middle card has the
+            <code>.popular</code> class for emphasis.
+          </p>
+          <ul>
+            <li>
+              <strong>Price:</strong> Update the number in
+              <code>.price-value</code>. It has data attributes
+              <code>data-monthly</code> and <code>data-yearly</code> which you
+              can use for JavaScript toggle logic.
+            </li>
+            <li>
+              <strong>Features:</strong> Edit the <code>&lt;li&gt;</code> items
+              in <code>.pricing-features</code>.
+            </li>
+            <li>
+              <strong>Links:</strong> Update the CTA button
+              <code>href</code> (e.g., to your Stripe checkout).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Testimonials -->
+        <div id="testimonials" class="section">
+          <h2>8. Testimonials & Social Proof</h2>
+          <p>
+            Located in
+            <code>&lt;section class="social-proof-section"&gt;</code>.
+          </p>
+
+          <h3>Adding Reviews</h3>
+          <p>
+            Duplicate a <code>.testimonial-card</code> div to add more reviews.
+          </p>
+          <pre><code>&lt;div class="testimonial-card"&gt;
+    &lt;div class="testimonial-content"&gt;
+        &lt;div class="testimonial-rating"&gt;★★★★★&lt;/div&gt;
+        &lt;p class="testimonial-quote"&gt;"Your review here..."&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class="card-visual"&gt;
-        &lt;img src="..." alt="..." /&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></div>
-
-                <h3>Customization Tips</h3>
-                <ul>
-                    <li><strong>Large Cards:</strong> Use <span class="highlight">large-card</span> class. These take up 2 columns on desktop.</li>
-                    <li><strong>Small Cards:</strong> Use <span class="highlight">small-card</span> class. These take up 1 column.</li>
-                    <li><strong>Icons:</strong> Replace the SVG inside <span class="highlight">.icon-wrapper</span>.</li>
-                    <li><strong>Images:</strong> Update the <span class="highlight">src</span> attribute of the images in large cards.</li>
-                </ul>
-            </section>
-
-            <!-- Section 4: How-It-Works Steps -->
-            <section id="steps">
-                <h2> Updating How-It-Works Steps</h2>
-                <p>The 3-step process section shows users how to get started.</p>
-
-                <h3>Structure of a Step</h3>
-                <div class="code-block"><code>&lt;div class="process-step"&gt;
-    &lt;div class="step-content"&gt;
-        &lt;div class="step-badge"&gt;Step 01&lt;/div&gt;
-        &lt;h3&gt;Connect your accounts&lt;/h3&gt;
-        &lt;p&gt;Description...&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="step-visual"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></div>
-
-                <div class="tip">
-                    <strong> Note:</strong> The second step has the class <span class="highlight">reverse</span> to alternate the layout (text on right, image on left).
-                </div>
-            </section>
-
-            <!-- Section 5: Pricing -->
-            <section id="pricing">
-                <h2> Customizing Pricing Plans</h2>
-                <p>The pricing section features a toggle for Monthly/Yearly billing.</p>
-
-                <h3>Updating Prices</h3>
-                <p>Prices are stored in data attributes to allow the toggle to work:</p>
-                <div class="code-block"><code>&lt;span class="price-value" 
-      data-monthly="12" 
-      data-yearly="10"&gt;
-    12
-&lt;/span&gt;</code></div>
-                <ul>
-                    <li><strong>data-monthly:</strong> Price shown when "Monthly" is selected.</li>
-                    <li><strong>data-yearly:</strong> Price shown when "Yearly" is selected.</li>
-                    <li><strong>Inner Text:</strong> The default price (usually monthly).</li>
-                </ul>
-
-                <h3>Highlighting a Plan</h3>
-                <p>Add the <span class="highlight">popular</span> class to a <span class="highlight">pricing-card</span> to make it stand out (larger size, different border).</p>
-            </section>
-
-            <!-- Section 6: FAQ -->
-            <section id="faq">
-                <h2> Managing FAQ Section</h2>
-                <p>The FAQ section uses an accordion style.</p>
-
-                <h3>Adding a New Question</h3>
-                <p>Copy an existing <span class="highlight">accordion-item</span> block:</p>
-                <div class="code-block"><code>&lt;div class="accordion-item"&gt;
-    &lt;button class="accordion-trigger" aria-expanded="false"&gt;
-        &lt;span class="accordion-title"&gt;Your Question Here?&lt;/span&gt;
-        &lt;span class="accordion-icon"&gt;...&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;div class="accordion-content" aria-hidden="true"&gt;
-        &lt;div class="accordion-body"&gt;
-            &lt;p&gt;Your answer here.&lt;/p&gt;
+    &lt;div class="testimonial-author"&gt;
+        &lt;img src="avatar.jpg" class="author-avatar"&gt;
+        &lt;div class="author-info"&gt;
+            &lt;div class="author-name"&gt;Name&lt;/div&gt;
+            &lt;div class="author-role"&gt;Role&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></div>
-                <p>The JavaScript in <span class="highlight">script.js</span> automatically handles the opening and closing logic for any new items you add.</p>
-            </section>
+&lt;/div&gt;</code></pre>
 
-            <!-- Section 7: Video Modal -->
-            <section id="video">
-                <h2> Updating Video Modal</h2>
-                <p>The "Watch Demo" button opens a modal with a video.</p>
+          <h3>Trust Logos</h3>
+          <p>
+            The <code>.logos-grid</code> contains SVGs for media outlets. You
+            can replace these SVGs with your partner or client logos.
+          </p>
+        </div>
 
-                <h3>Changing the Video</h3>
-                <p>Locate the <span class="highlight">#video-modal</span> section at the bottom of <span class="highlight">index.html</span>:</p>
-                <div class="code-block"><code>&lt;video id="demo-video" controls width="100%"&gt;
-    &lt;source src="YOUR_VIDEO_URL.mp4" type="video/mp4" /&gt;
-&lt;/video&gt;</code></div>
-                <p>Replace the <span class="highlight">src</span> attribute with the URL of your video file.</p>
-            </section>
+        <!-- FAQ -->
+        <div id="faq" class="section">
+          <h2>9. FAQ Section</h2>
+          <p>
+            An accordion-style FAQ section. The interactivity is handled by
+            <code>script.js</code> (implied, or uses simple CSS/HTML
+            details/summary if not script-heavy, but here it uses buttons).
+          </p>
 
-            <!-- Section 8: Common Tasks -->
-            <section id="common">
-                <h2> Common Customization Tasks</h2>
-
-                <h3>Change Brand Colors</h3>
-                <p>All colors are defined as CSS variables in <span class="highlight">style.css</span>:</p>
-                <div class="code-block"><code>:root {
-    --primary: #0D9488;
-    --primary-dark: #0F766E;
-    --secondary: #0F172A;
-    /* ... */
-}</code></div>
-
-                <h3>Animations</h3>
-                <p>To animate an element when it scrolls into view, add the class <span class="highlight">reveal-element</span> to it in HTML. The JavaScript observer will automatically handle the fade-in effect.</p>
-            </section>
-
-            <!-- Section 9: Testing -->
-            <section id="testing">
-                <h2> Testing Your Changes</h2>
-                <p>Always test after making modifications.</p>
-                <ul>
-                    <li><strong>Responsiveness:</strong> Check on mobile, tablet, and desktop.</li>
-                    <li><strong>Interactions:</strong> Test the pricing toggle, FAQ accordion, and video modal.</li>
-                    <li><strong>Console:</strong> Check browser developer tools (F12) for any JavaScript errors.</li>
-                </ul>
-            </section>
+          <h3>Adding Questions</h3>
+          <p>Copy an existing <code>.accordion-item</code> block.</p>
+          <ul>
+            <li>
+              <strong>Question:</strong> Inside
+              <code>.accordion-trigger .accordion-title</code>.
+            </li>
+            <li>
+              <strong>Answer:</strong> Inside
+              <code>.accordion-content .accordion-body</code>.
+            </li>
+          </ul>
+          <p>
+            The JavaScript for toggling these is likely generic, looking for
+            <code>.accordion-trigger</code> clicks.
+          </p>
         </div>
 
         <!-- Footer -->
-        <div class="footer">
-            <p><strong> Product Customization Guide</strong></p>
-            <p>Last Updated: December 2025 | Version 2.0</p>
-            <a href="#structure" class="back-to-top">Back to Top </a>
+        <div id="footer" class="section">
+          <h2>10. Footer & Newsletter</h2>
+          <p>
+            The footer includes links, newsletter signup, and copyright info.
+          </p>
+
+          <h3>Newsletter Form</h3>
+          <p>
+            The form has an
+            <code>onsubmit="handleNewsletter(event)"</code> attribute. You will
+            need to implement this function in <code>script.js</code> to connect
+            to your email service provider.
+          </p>
+
+          <h3>Links</h3>
+          <p>
+            Organized in columns (<code>.footer-col</code>). Update the
+            <code>&lt;a&gt;</code> tags to point to your actual pages.
+          </p>
         </div>
+
+        <!-- Interactive Elements -->
+        <div id="interactive" class="section">
+          <h2>11. Interactive Elements</h2>
+
+          <h3>Chat Widget</h3>
+          <p>
+            The floating chat widget is defined in
+            <code>.chat-widget-container</code>.
+          </p>
+          <ul>
+            <li>
+              <strong>Initial Message:</strong> Edit the text in
+              <code>.bot-message</code> inside <code>.chat-body</code>.
+            </li>
+            <li>
+              <strong>Quick Actions:</strong> Edit the buttons in
+              <code>.quick-actions</code>.
+            </li>
+            <li>
+              <strong>Logic:</strong> The <code>toggleChat()</code> function in
+              <code>script.js</code> controls visibility.
+            </li>
+          </ul>
+
+          <h3>Video Modal</h3>
+          <p>The "Watch Demo" button in the Hero section opens a modal.</p>
+          <ul>
+            <li>
+              <strong>Video Source:</strong> Locate <code>#video-modal</code> at
+              the bottom of <code>index.html</code>. Change the
+              <code>&lt;source&gt;</code> src to your video file or URL.
+            </li>
+            <li>
+              <strong>Trigger:</strong> The button with id
+              <code>watch-demo-btn</code> triggers the modal.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
