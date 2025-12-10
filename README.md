@@ -1,114 +1,115 @@
 # Mintly Landing Page
 
-A modern, high-conversion landing page for **Mintly**, an AI-powered personal finance automation platform. This project features a responsive design, advanced CSS animations, and interactive JavaScript components to create an engaging user experience.
+A modern, high-conversion landing page template designed for the Mintly personal finance application. This project provides a fully responsive, accessible, and performant web interface built with vanilla HTML, CSS, and JavaScript.
 
-## ✨ Key Features
+![Mintly Banner](https://via.placeholder.com/1200x600?text=Mintly+Landing+Page+Preview)
 
-- **Fully Responsive**: Fluid layout that adapts seamlessly from mobile phones to large desktop screens.
-- **Modern UI/UX**: Clean typography (Inter font), glassmorphism effects, gradients, and a professional color palette (Teal/Navy).
-- **Scroll Animations**: Elements reveal themselves elegantly as the user scrolls, using `IntersectionObserver` for performance.
-- **Interactive Components**:
-  - **Video Modal**: Custom modal with a nature-themed demo video.
-  - **Pricing Toggle**: Switch between Monthly and Yearly billing with automatic price updates.
-  - **FAQ Accordion**: Smooth expand/collapse functionality for common questions.
-  - **Chat Widget**: Floating support chat with a realistic conversation interface.
-  - **Mobile Navigation**: Slide-out menu for smaller screens.
+## 📋 Table of Contents
 
-## 🛠️ Tech Stack
+- [Features](#-features)
+- [Technical Specifications](#-technical-specifications)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Customization](#-customization)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-- **HTML5**: Semantic markup for better accessibility and SEO.
-- **CSS3**:
-  - Flexbox & CSS Grid for layout.
-  - CSS Variables for consistent theming.
-  - Keyframe animations and transitions.
-  - Media queries for responsiveness.
-- **JavaScript (Vanilla)**:
-  - DOM manipulation.
-  - Event handling.
-  - `IntersectionObserver` API for scroll animations.
-  - No external frameworks (jQuery-free).
+## 🚀 Features
+
+- **Responsive Design:** Mobile-first architecture ensuring a seamless experience across all devices (Mobile, Tablet, Desktop).
+- **Interactive Navigation:**
+  - Sticky header that adapts on scroll.
+  - Smooth scrolling for anchor links.
+  - Fully functional mobile hamburger menu with accessible ARIA attributes.
+- **Modern UI/UX:**
+  - Clean, professional aesthetic using the Inter font family.
+  - Engaging hover states and transitions.
+  - SVG icons for crisp rendering on high-DPI displays.
+- **Performance Focused:**
+  - Zero external framework dependencies (No jQuery, Bootstrap, or Tailwind required).
+  - Optimized asset loading.
+  - Semantic HTML5 structure for better SEO and accessibility.
+
+## 🔧 Technical Specifications
+
+The project is built using standard web technologies, ensuring long-term maintainability and easy integration.
+
+- **HTML5:** Semantic markup with proper meta tags for SEO and social sharing.
+- **CSS3:** Custom styling using CSS Variables (Custom Properties) for easy theming. Flexbox and Grid layouts are used for structure.
+- **JavaScript (ES6+):** Vanilla JavaScript for DOM manipulation and event handling. No build step required.
 
 ## 📂 Project Structure
 
-```
+```text
 mintly-landing/
-├── index.html      # Main HTML structure
-├── style.css       # Global styles, layout, and animations
-├── script.js       # Logic for interactions and animations
-├── README.md       # Project documentation
-└── ...             # Assets and other files
+├── index.html                  # Main landing page structure
+├── style.css                   # Global styles and responsive media queries
+├── script.js                   # UI logic (navigation, scroll effects)
+├── PRODUCT_CUSTOMIZATION.html  # Guide for customizing the template
+├── favicon.svg                 # Site favicon
+├── LICENSE                     # Apache 2.0 License
+└── README.md                   # Project documentation
 ```
 
-## 🧱 Section Breakdown
+## 🏁 Getting Started
 
-### 1. Hero Section
+You can run this project locally without any complex build tools.
 
-- **Headline**: "Master Your Money with AI Intelligence".
-- **Visuals**: Dashboard mockup with floating data cards (Monthly Savings, Investment Growth).
-- **Actions**: "Start Free Trial" and "Watch Demo" buttons.
-- **Social Proof**: Trust indicators with user avatars and ratings.
+### Prerequisites
 
-### 2. Key Benefits (Bento Grid)
+- A modern web browser (Chrome, Firefox, Safari, Edge).
+- A code editor (VS Code recommended).
 
-- A modern **Bento Grid** layout showcasing core features:
-  - AI-Powered Automation (Large card)
-  - Automatic Savings (Large card)
-  - 2-Minute Setup, Smart Goals, Bank Security, Mobile First (Small cards).
+### Installation
 
-### 3. How It Works
+1.  **Clone the repository:**
 
-- A clear **3-Step Process** timeline:
-  1.  **Connect your accounts**: Highlighting security and broad support.
-  2.  **Set your smart goals**: Custom timelines and risk adjustment.
-  3.  **Watch your wealth grow**: Auto-rebalancing and dividend reinvestment.
-
-### 4. Unique Selling Proposition (USP)
-
-- "The Future of Finance is Automated".
-- Featured card for "Fully Automated" finance.
-- Supporting cards for AI learning, Security, and Real-time insights.
-
-### 5. Social Proof
-
-- **Testimonials**: Grid of user reviews with ratings and roles.
-- **Trust Logos**: Featured in TechCrunch, Forbes, Bloomberg, Wired, The Verge.
-
-### 6. Pricing
-
-- **Toggle**: Monthly vs. Yearly (Save 20%).
-- **Tiers**:
-  - **Starter**: Free, basic insights.
-  - **Pro**: $12/mo, advanced AI & automation (Most Popular).
-  - **Business**: $29/mo, for power users.
-
-### 7. FAQ & Support
-
-- Accordion-style Frequently Asked Questions.
-- Direct link to chat support.
-
-### 8. Footer
-
-- Newsletter subscription form.
-- Comprehensive site links (Product, Company, Resources).
-- Social media links and legal information.
-
-## 🎬 Animations
-
-The site uses a custom `reveal-element` class and JavaScript `IntersectionObserver` to trigger animations:
-
-- **Fade Up**: Elements translate up and fade in.
-- **Staggered Delays**: Grid items (like pricing cards and features) appear one after another for a cascading effect.
-- **Performance**: Uses `will-change` and hardware-accelerated CSS properties.
-
-## 🚀 Getting Started
-
-1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/mintly-landing.git
+    git clone https://github.com/CodeWithKarol/mintly-landing.git
+    cd mintly-landing
     ```
-2.  **Open `index.html`** in your browser.
-3.  **Explore**: Scroll through the page to see animations and interact with the components.
+
+2.  **Run locally:**
+    - Simply open `index.html` in your web browser.
+    - **Recommended:** Use a local development server like "Live Server" in VS Code to ensure all assets load correctly.
+
+## 🎨 Customization
+
+This template is designed to be easily customized to fit your brand.
+
+### Changing Colors
+
+The project uses CSS variables for color management. Open `style.css` and modify the root variables:
+
+```css
+:root {
+  --primary-color: #14b8a6; /* Teal */
+  --secondary-color: #0f766e;
+  /* ... other variables */
+}
+```
+
+### Detailed Guide
+
+For a comprehensive guide on how to customize fonts, colors, and content, please refer to the included **[Product Customization Guide](PRODUCT_CUSTOMIZATION.html)**. Open this file in your browser for step-by-step instructions.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve this project, please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+5.  Push to the branch (`git push origin feature/AmazingFeature`).
+6.  Open a Pull Request.
+
+Please ensure your code follows the existing style and includes comments where necessary.
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-&copy; 2025 Mintly Inc. All rights reserved.
+_Built with ❤️ for the Mintly community._
